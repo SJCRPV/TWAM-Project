@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<title>GAME TITLE IS STILL WIP</title>
+		<script type="text/javascript" src="../Plugins/jquery-2.2.2.min.js"></script>
+		<script type="text/javascript" src="PC_Desktop.js"></script>
+		<link rel="stylesheet" type="text/css" href="PC_Desktop.css">
+		<script>
+			toggleApperance();
+		</script>
+		<meta charset="UTF-8">
+	</head>
+	
+	<body>
+		<section class="topNavBar">
+			<br>
+			<div id="timeControls">
+				<button id="pauseButton" onclick="toggleApperance()"><img src="../img/Pause.png"></button>
+				<button id="playButton"><img src="../img/Play.png"></button>
+				<button id="playButtonX2"><img src="../img/PlayX2.png"></button>
+				<button id="playButtonX3"><img src="../img/PlayX3.png"></button>
+			</div>
+			<div id="gameDate">MON 1 JAN 00:00:00<script>centerElement('#gameDate');</script></div>
+			<!-- currentConnection is only supposed to appear when the player is connected to a server -->
+			<div id="currentConnection">Connected to: </div>
+		</section>
+		
+		<section class="desktop">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+		</section>
+		
+		<section class="bottomNavBar">
+			<br>
+			<button id="startMenuButton"><img src="../img/StartMenuButton.png"></button>
+			<div id="searchBar"><input type="text" placeholder="Search..."></input></div>
+			<button id="windowSwitchButton"><img src="../img/WindowChange.png"></div>
+			<div id="openWindowIconArea"></div>
+			<div id="systemIconArea"></div>
+		</section>
+		
+	</body>
+</html>
+
