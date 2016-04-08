@@ -9,7 +9,6 @@ display:table; }
 
 .topNavBar
 {
-	height: 15%;
 	border: 1px solid red;
 }
 #timeControls
@@ -26,14 +25,11 @@ display:table; }
 
 .desktop
 {
-	width: 100%;
-	height: 70%;
 	border: 1px solid blue;
 }
 
 .bottomNavBar
 {
-	height: 15%;
 	border: 1px solid green;
 }
 #startMenuButton
