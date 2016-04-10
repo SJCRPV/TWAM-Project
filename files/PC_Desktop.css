@@ -27,6 +27,11 @@ display:table; }
 {
 	border: 1px solid blue;
 }
+#background
+{
+	height: 100%;
+	width: 100%;
+}
 
 .bottomNavBar
 {

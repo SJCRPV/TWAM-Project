@@ -5,10 +5,14 @@
 		<link rel="stylesheet" type="text/css" href="PC_Desktop.css">
 		<script type="text/javascript" src="../Plugins/jquery-2.2.2.min.js"></script>
 		<script type="text/javascript" src="PC_Desktop.js"></script>
+		<script type="text/javascript">
+			constructor();
+		</script>
 		<meta charset="UTF-8">
 	</head>
 	
 	<body>
+	
 		<section class="topNavBar">
 			<div id="timeControls">
 				<button id="pauseButton" onclick="stopTime();"><img src="../img/Pause.png"></button>
@@ -22,17 +26,12 @@
 		</section>
 		
 		<section class="desktop">
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
+			<img id="background" src="../img/PCDesktopBackground.png">
 		</section>
 		
 		<section class="bottomNavBar">
 			<br>
-			<button id="startMenuButton"><img src="../img/StartMenuButton.png"></button>
+			<button id="startMenuButton" onclick="toggleStartMenu()"><img src="../img/StartMenuButton.png"></button>
 			<div id="searchBar"><input type="text" placeholder="Search..."></input></div>
 			<button id="windowSwitchButton"><img src="../img/WindowChange.png"></div>
 			<div id="openWindowIconArea"></div>

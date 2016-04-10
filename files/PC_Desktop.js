@@ -1,4 +1,9 @@
-//Currently empty. Type in functions as you need them created
+function constructor()
+{
+	var startMenuFlag = false;
+}
+
+
 function stopTime()
 {
 	//This function should send a message to the server to stop the time.
@@ -31,6 +36,12 @@ function isPlayerConnected()
 	//This function requests the $isConnected flag from the server and returns its value.
 	console.log("Returning the state of $isConnected");
 	//return $isConnected;
+}
+
+function toggleStartMenu()
+{
+	$startMenuFlag != $startMenuFlag;
+	console.log("The statement 'Is the start menu open?' is " + $startMenuFlag);
 }
 
 if(isPlayerConnected())
