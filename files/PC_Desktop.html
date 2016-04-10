@@ -10,7 +10,6 @@
 	
 	<body>
 		<section class="topNavBar">
-			<br>
 			<div id="timeControls">
 				<button id="pauseButton" onclick="stopTime();"><img src="../img/Pause.png"></button>
 				<button id="playButton" onclick="startTime(1)"><img src="../img/Play.png"></button>
@@ -45,15 +44,9 @@
 	<script>
 		$(function()
 		{
+			$('.topNavBar').css({ height: $(window).innerHeight() * 0.075 });
 			$('.desktop').css({ height: $(window).innerHeight() * 0.8 });
 			$('.bottomNavBar').css({ height: $(window).innerHeight() * 0.075 });
-			$('.topNavBar').css({ height: $(window).innerHeight() * 0.1 });
-			$(window).resize(function()
-			{
-				$('.desktop').css({ height: $(window).innerHeight() * 0.8 });
-				$('.bottomNavBar').css({ height: $(window).innerHeight() * 0.075});
-				$('.topNavBar').css({ height: $(window).innerHeight() * 0.1 });
-			});
 		});
 	</script>
 </html>
