@@ -10,29 +10,38 @@ display:table; }
 .topNavBar
 {
 	border: 1px solid red;
+	width: 100%;
 }
-	#timeControls
+	.timeControls
 	{
-		border: 1px solid orange;
+		background-color: #6897bb;
+		border: 1px solid #6897bb;
+		display: inline;
+	}
+	.timeControls:hover
+	{
+		background-color: #6897dd;
+		transition-duration: 0.1s;
+		border: 1px solid #6897dd;
 		display: inline;
 	}
 	#gameDate
 	{
 		margin:0 0 0 30%;
 		border: 1px solid orange;
-		display: inline;
 	}
 
 .desktop
 {
 	border: 1px solid blue;
+	position: relative;
 }
 	#background
 	{
 		height: 100%;
 		width: 100%;
-		position: relative;
-		z-index: 1;
+		position: absolute;
+		z-index: -1;
 	}
 		#background img
 		{
@@ -54,7 +63,7 @@ display:table; }
 		{
 			/*Position (1, 1)*/
 			position: absolute;
-			top: 15%;
+			top: 5%;
 			left: 2%;
 			z-index: 2;
 		}
@@ -62,7 +71,7 @@ display:table; }
 		{
 			/*Position (2, 1)*/
 			position: absolute;
-			top: 28%;
+			top: 18%;
 			left: 2%;
 			z-index: 2;
 		}
@@ -70,7 +79,7 @@ display:table; }
 		{
 			/*Position (1, 2)*/
 			position: absolute;
-			top: 15%;
+			top: 5%;
 			left: 8%;
 			z-index: 2;
 		}
@@ -78,7 +87,7 @@ display:table; }
 		{
 			/*Position (2, 2)*/
 			position: absolute;
-			top: 28%;
+			top: 18%;
 			left: 8%;
 			z-index: 2;
 		}
@@ -86,7 +95,7 @@ display:table; }
 		{
 			/*Position (3, 1)*/
 			position: absolute;
-			top: 41%;
+			top: 31%;
 			left: 2%;
 			z-index: 2;
 		}
@@ -94,10 +103,51 @@ display:table; }
 		{
 			/*Position (3, 2)*/
 			position: absolute;
-			top: 41%;
+			top: 31%;
 			left: 8%;
 			z-index: 2;
 		}
+		#trash
+		{
+			/*Position: Bottom right*/
+			position: absolute;
+			top: 72%;
+			left: 95%;
+			z-index: 2;
+		}
+		#selfDestruct
+		{
+			/*Position: Bottom right*/
+			position: absolute;
+			top: 85%;
+			left: 95%;
+			z-index: 2;
+		}
+
+.startMenu
+{
+	top: 44.8%;
+	right: 0.1%;
+	width: 20%;
+	height: 55%;
+	background-color: #808080;
+	border: 2px solid black;
+	position: relative;
+	z-index: 3;
+}
+.startMenu #profileName
+{
+	border: 2px solid black;
+	width: 100px;
+}
+.startMenu #profileName b
+{
+	font-size: 20px;
+	color: blue;
+	position: relative;
+	z-index: 3;
+	margin-left: 15px;
+}
 
 .bottomNavBar
 {

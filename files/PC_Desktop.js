@@ -9,6 +9,8 @@ var isScriptsOpen = false;
 var isHelpOpen = false;
 var isTerminalOpen = false;
 var isBrowserOpen = false;
+var isTrashOpen = false;
+var isSDOpen = false;
 
 //Functions
 function stopTime()
@@ -132,5 +134,33 @@ function startBrowser()
 	else
 	{
 		console.log("Browser is already open");
+	}
+}
+
+function openTrash()
+{
+	if(isTrashOpen == false)
+	{
+		console.log("Opening the Trash");
+		isTrashOpen = true;
+	}
+	else
+	{
+		console.log("Trash is already open");
+	}
+}
+
+function startSelfDestruct()
+{
+	/*This function should simply ask for confirmation and then play out an animation of it just quickly deleting
+	every file in the computer and closing out the game. What is here is simply temporary.*/
+	if(isSDOpen == false)
+	{
+		console.log("Initiating Self Destruct sequence...");
+		isSDOpen = true;
+	}
+	else
+	{
+		console.log("Self Destruct sequence is already initiated.");
 	}
 }
