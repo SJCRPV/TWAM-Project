@@ -1,5 +1,14 @@
 //Variables
 var startMenuFlag = false;
+var isPlayerConnected = false;
+
+//Open program flags
+var isNotepadOpen = false;
+var isMapOpen = false;
+var isScriptsOpen = false;
+var isHelpOpen = false;
+var isTerminalOpen = false;
+var isBrowserOpen = false;
 
 //Functions
 function stopTime()
@@ -42,7 +51,86 @@ function toggleStartMenu()
 	console.log("The statement 'Is the start menu open?' is " + startMenuFlag);
 }
 
-if(isPlayerConnected())
+function togglePlayerConnection()
 {
-	$("#currentconnection").toggle()
+	$("#currentconnection").toggle();
+}
+
+//Programs
+function startNotepad()
+{
+	if(isNotepadOpen == false)
+	{
+		console.log("Starting Notepad");
+		isNotepadOpen = true;
+	}
+	else
+	{
+		console.log("Notepad is already open");
+	}
+}
+
+function startMap()
+{
+	if(isMapOpen == false)
+	{
+		console.log("Starting Map");
+		isMapOpen = true;
+	}
+	else
+	{
+		console.log("Map is already open");
+	}
+}
+
+function openScriptsFolder()
+{
+	if(isScriptsOpen == false)
+	{
+		console.log("Opening the Scripts folder");
+		isScriptsOpen = true;
+	}
+	else
+	{
+		console.log("Scripts folder is already open");
+	}
+}
+
+function startHelp()
+{
+	if(isHelpOpen == false)
+	{
+		console.log("Starting Help");
+		isHelpOpen = true;
+	}
+	else
+	{
+		console.log("Help is already open");
+	}
+}
+
+function startTerminal()
+{
+	if(isTerminalOpen == false)
+	{
+		console.log("Starting Terminal");
+		isTerminalOpen = true;
+	}
+	else
+	{
+		console.log("Terminal is already open");
+	}
+}
+
+function startBrowser()
+{
+	if(isBrowserOpen == false)
+	{
+		console.log("Starting Browser");
+		isBrowserOpen = true;
+	}
+	else
+	{
+		console.log("Browser is already open");
+	}
 }

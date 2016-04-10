@@ -11,66 +11,120 @@ display:table; }
 {
 	border: 1px solid red;
 }
-#timeControls
-{
-	border: 1px solid orange;
-	display: inline;
-}
-#gameDate
-{
-	margin:0 0 0 30%;
-	border: 1px solid orange;
-	display: inline;
-}
+	#timeControls
+	{
+		border: 1px solid orange;
+		display: inline;
+	}
+	#gameDate
+	{
+		margin:0 0 0 30%;
+		border: 1px solid orange;
+		display: inline;
+	}
 
 .desktop
 {
 	border: 1px solid blue;
 }
-#background
-{
-	height: 100%;
-	width: 100%;
-	position: relative;
-}
-#background img
-{
-	height: 100%;
-	width: 100%;
-}
-.icons
-{
-	width: 128px;
-	height: 128px;
-	border: 1px solid yellow;
-}
+	#background
+	{
+		height: 100%;
+		width: 100%;
+		position: relative;
+		z-index: 1;
+	}
+		#background img
+		{
+			height: 100%;
+			width: 100%;
+		}
+	.icons
+	{
+		width: 44px;
+		height: 64px;
+		border: 1px solid yellow;
+		position: absolute;
+		z-index: 2;
+		color: white;
+		font-size: 12px;
+		text-align: center;
+	}
+		#notepad
+		{
+			/*Position (1, 1)*/
+			position: absolute;
+			top: 15%;
+			left: 2%;
+			z-index: 2;
+		}
+		#map
+		{
+			/*Position (2, 1)*/
+			position: absolute;
+			top: 28%;
+			left: 2%;
+			z-index: 2;
+		}
+		#scripts
+		{
+			/*Position (1, 2)*/
+			position: absolute;
+			top: 15%;
+			left: 8%;
+			z-index: 2;
+		}
+		#help
+		{
+			/*Position (2, 2)*/
+			position: absolute;
+			top: 28%;
+			left: 8%;
+			z-index: 2;
+		}
+		#cmd
+		{
+			/*Position (3, 1)*/
+			position: absolute;
+			top: 41%;
+			left: 2%;
+			z-index: 2;
+		}
+		#browser
+		{
+			/*Position (3, 2)*/
+			position: absolute;
+			top: 41%;
+			left: 8%;
+			z-index: 2;
+		}
 
 .bottomNavBar
 {
 	border: 1px solid green;
 }
-#startMenuButton
-{
-	float:left;
-	display: inline;
-}
-#searchBar
-{
-	float:left;
-	display: inline;
-}
-#windowSwitchButton
-{
-	float:left;
-	display: inline;
-}
-#openWindowIconArea
-{
-	float:left;
-	display: inline;
-}
-#systemIconArea
-{
-	float: right;
-	display: inline;
-}
+	#startMenuButton
+	{
+		float:left;
+		display: inline;
+	}
+	#searchBar
+	{
+		float:left;
+		display: inline;
+	}
+	#windowSwitchButton
+	{
+		float:left;
+		display: inline;
+	}
+	#openWindowIconArea
+	{
+		float:left;
+		display: inline;
+	}
+	#systemIconArea
+	{
+		float: right;
+		display: inline;
+	}

@@ -5,6 +5,14 @@
 		<link rel="stylesheet" type="text/css" href="PC_Desktop.css">
 		<script type="text/javascript" src="../Plugins/jquery-2.2.2.min.js"></script>
 		<script type="text/javascript" src="PC_Desktop.js"></script>
+		<script>
+		$(function()
+		{
+			$('.topNavBar').css({ height: $(window).innerHeight() * 0.075 });
+			$('.desktop').css({ height: $(window).innerHeight() * 0.81 });
+			$('.bottomNavBar').css({ height: $(window).innerHeight() * 0.05 });
+		});
+		</script>
 		<meta charset="UTF-8">
 	</head>
 	
@@ -26,13 +34,19 @@
 			<div id="background">
 				<img src="../img/PCDesktopBackground.png">
 			</div>
+			
 			<div id="iconContainer">
-				<a class="icons"
+				<!-- swap out the img src with the actual images when you have them -->
+				<a class="icons" id="notepad" ondblclick="startNotepad()"><img src="../img/icon.png">Notes.exe</a>
+				<a class="icons" id="map" ondblclick="startMap()"><img src="../img/icon.png">Map.exe</a>
+				<a class="icons" id="scripts" ondblclick="openScriptsFolder()"><img src="../img/iconFolder.png">Scripts</a>
+				<a class="icons" id="help" ondblclick="startHelp()"><img src="../img/icon.png">Help.exe</a>
+				<a class="icons" id="cmd" ondblclick="startTerminal()"><img src="../img/icon.png">Terminal.exe</a>
+				<a class="icons" id="browser" ondblclick="startBrowser()"><img src="../img/icon.png">Browser.exe</a>
 			</div>
 		</section>
 		
 		<section class="bottomNavBar">
-			<br>
 			<button id="startMenuButton" onclick="toggleStartMenu()"><img src="../img/StartMenuButton.png"></button>
 			<div id="searchBar"><input type="text" placeholder="Search..."></input></div>
 			<button id="windowSwitchButton"><img src="../img/WindowChange.png"></div>
@@ -41,14 +55,5 @@
 		</section>
 		
 	</body>
-	
-	<script>
-		$(function()
-		{
-			$('.topNavBar').css({ height: $(window).innerHeight() * 0.075 });
-			$('.desktop').css({ height: $(window).innerHeight() * 0.8 });
-			$('.bottomNavBar').css({ height: $(window).innerHeight() * 0.075 });
-		});
-	</script>
 </html>
 
