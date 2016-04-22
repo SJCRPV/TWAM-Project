@@ -3,28 +3,31 @@
 	<head>
 		<title>GAME TITLE IS STILL WIP</title>
 		<link rel="stylesheet" type="text/css" href="PC_Desktop.css">
+		<link href="../Plugins/Metro-UI-CSS-master/build/css/metro.css" rel="stylesheet">
+		<script src="../Plugins/Metro-UI-CSS-master/build/js/metro.js"></script>
 		<script type="text/javascript" src="../Plugins/jquery-2.2.2.min.js"></script>
 		<script type="text/javascript" src="PC_Desktop.js"></script>
 		<script>
 		$(function()
 		{
-			$('.topNavBar').css({ height: $(window).innerHeight() * 0.045 });
+			$('.topNavBar').css({ height: $(window).innerHeight() * 0.057 });
 			$('.desktop').css({ height: $(window).innerHeight() * 0.87 });
-			$('.bottomNavBar').css({ height: $(window).innerHeight() * 0.05 });
+			$('.bottomNavBar').css({ height: $(window).innerHeight() * 0.058 });
 		});
 		</script>
 		<meta charset="UTF-8">
 	</head>
 	
 	<body>
-		<section class="topNavBar">
+		<section class="topNavBar bg-gray">
 			<div class="timeControlContainer">
-				<button class="timeControls" id="pauseButton" onclick="stopTime();"><img src="../img/Pause.png"></button>
-				<button class="timeControls" id="playButton" onclick="startTime(1)"><img src="../img/Play.png"></button>
-				<button class="timeControls" id="playButtonX2" onclick="startTime(2);"><img src="../img/PlayX2.png"></button>
-				<button class="timeControls" id="playButtonX3" onclick="startTime(3);"><img src="../img/PlayX3.png"></button>
+				<button class="button square-button" id="pauseButton" onclick="stopTime();"><img src="../img/Pause.png"></button>
+				<button class="button square-button" id="playButton" onclick="startTime(1)"><img src="../img/Play.png"></button>
+				<button class="button square-button" id="playButtonX2" onclick="startTime(2);"><img src="../img/PlayX2.png"></button>
+				<button class="button square-button" id="playButtonX3" onclick="startTime(3);"><img src="../img/PlayX3.png"></button>
+				<!-- Supposed to go grab the current game time -->
+				<button class="button bg-gray" disabled id="gameDate">MON 1 JAN 00:00:00</button>
 			</div>
-			<div id="gameDate">MON 1 JAN 00:00:00</div>
 			<!-- currentConnection is only supposed to appear when the player is connected to a server -->
 			<div id="currentConnection">Connected to: </div>
 		</section>
@@ -36,56 +39,93 @@
 			
 			<div id="iconContainer">
 				<!-- swap out the img src with the actual images when you have them -->
-				<a class="icons" id="notepad" ondblclick="startNotepad()"><img src="../img/icon.png">Notes.exe</a>
-				<a class="icons" id="map" ondblclick="startMap()"><img src="../img/icon.png">Map.exe</a>
-				<a class="icons" id="scripts" ondblclick="openScriptsFolder()"><img src="../img/iconFolder.png">Scripts</a>
-				<a class="icons" id="help" ondblclick="startHelp()"><img src="../img/icon.png">Help.exe</a>
-				<a class="icons" id="cmd" ondblclick="startTerminal()"><img src="../img/icon.png">Terminal.exe</a>
-				<a class="icons" id="browser" ondblclick="startBrowser()"><img src="../img/icon.png">Browser.exe</a>
-				<a class="icons" id="trash" ondblclick="openTrash()"><img src="../img/iconFolder.png">Trash</a>
-				<a class="icons" id="selfDestruct" ondblclick="startSelfDestruct()"><img src="../img/icon.png">sd.exe</a>
+				<a class="tile-small" data-role="tile-small" id="notepad" ondblclick="startNotepad()">
+					<div class = "tile-content">
+						<span class = "tile-label">Notes</span>
+					</div>
+				</a>
+				<a class="tile-small" data-role="tile-small" id="map" ondblclick="startMap()">
+				<div class = "tile-content">
+						<span class = "tile-label">Map</span>
+					</div>
+				</a>
+				<a class="tile-small" data-role="tile-small" id="scripts" ondblclick="openScriptsFolder()">
+					<div class = "tile-content">
+						<span class = "tile-label">Scripts</span>
+					</div>
+				</a>
+				<a class="tile-small" data-role="tile-small" id="help" ondblclick="startHelp()">
+					<div class = "tile-content">
+						<span class = "tile-label">Help</span>
+					</div>
+				</a>
+				<a class="tile-small" data-role="tile-small" id="cmd" ondblclick="startTerminal()">
+					<div class = "tile-content">
+						<span class = "tile-label">Terminal</span>
+					</div>
+				</a>
+				<a class="tile-small" data-role="tile-small" id="browser" ondblclick="startBrowser()">
+					<div class = "tile-content">
+						<span class = "tile-label">Browser</span>
+					</div>
+				</a>
+				<a class="tile-small" data-role="tile-small" id="trash" ondblclick="openTrash()">
+					<div class = "tile-content">
+						<span class = "tile-label">Trash</span>
+					</div>
+				</a>
+				<a class="tile-small" data-role="tile-small" id="selfDestruct" ondblclick="startSelfDestruct()">
+					<div class = "tile-content">
+						<span class = "tile-label">sd.exe</span>
+					</div>
+				</a>
 			</div>
 			
-			<div class="startMenu">
-				<div id="profileName">
-					<?php
-						//You go grab the user's chosen login name and display it here. For now, it's Derp.
-					?>
-					<b>Derp</b>
-				</div>
-				<div id="stats">
-				
-				</div>
-				<div id="folders">
-				
-				</div>
-				<div id="settings">
-				
-				</div>
-				<div id="programs">
-				
-				</div>
-				<div id="news">
-				
-				</div>
-				<div id="social">
-				
-				</div>
-				<div id="email">
-				
-				</div>
-				<div id="chat">
-				
+			<div class="startMenu bg-grayLight">
+				<div class="tile-container">
+					<div class="tile-small tile-square-x" id="profileName">
+						<?php
+							//You go grab the user's chosen login name and display it here. For now, it's Derp.
+						?>
+						<b>Derp</b>
+					</div>
+					<div class="tile-small tile-wide-x bg-cyan" id="news">
+					
+					</div>
+					<div class="tile" id="stats">
+						
+					</div>
+					<div  id="folders">
+						
+					</div>
+					<div id="settings">
+					
+					</div>
+					<div id="programs">
+					
+					</div>
+					<div id="social">
+					
+					</div>
+					<div id="email">
+					
+					</div>
+					<div id="chat">
+					
+					</div>
 				</div>
 			</div>
 		</section>
 		
-		<section class="bottomNavBar">
-			<button id="startMenuButton" onclick="toggleStartMenu()"><img src="../img/StartMenuButton.png"></button>
-			<div id="searchBar"><input type="text" placeholder="Search..."></input></div>
-			<button id="windowSwitchButton"><img src="../img/WindowChange.png"></div>
-			<div id="openWindowIconArea"></div>
-			<div id="systemIconArea"></div>
+		<section class="bottomNavBar bg-black">
+			<div class="row cells12">
+				<button class="button bg-cyan bd-cobalt" id="startMenuButton" onclick="toggleStartMenu()"></button>
+				<div class="cell colspan2 input-control text" data-role="input" id="searchBar"><input type="text" placeholder="Search..."></input></div>
+				<button class="button bg-cyan bd-cobalt" id="windowSwitchButton"><img src="../img/WindowChange.png" class="icon"></div>
+				<div class="cell colspan2"></div>
+				<div class="cell" id="openWindowIconArea"></div>
+				<div class="cell" id="systemIconArea"></div>
+			</div>
 		</section>
 	</body>
 </html>

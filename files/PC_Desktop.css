@@ -112,7 +112,7 @@ display:table; }
 			/*Position: Bottom right*/
 			position: absolute;
 			top: 72%;
-			left: 95%;
+			left: 94%;
 			z-index: 2;
 		}
 		#selfDestruct
@@ -120,16 +120,16 @@ display:table; }
 			/*Position: Bottom right*/
 			position: absolute;
 			top: 85%;
-			left: 95%;
+			left: 94%;
 			z-index: 2;
 		}
 
 .startMenu
 {
-	top: 44.8%;
+	top: 24.8%;
 	right: 0.1%;
-	width: 20%;
-	height: 55%;
+	width: 35%;
+	height: 75%;
 	background-color: #808080;
 	border: 2px solid black;
 	position: relative;
@@ -137,8 +137,7 @@ display:table; }
 }
 .startMenu #profileName
 {
-	border: 2px solid black;
-	width: 100px;
+	height:30px;
 }
 .startMenu #profileName b
 {
@@ -147,6 +146,15 @@ display:table; }
 	position: relative;
 	z-index: 3;
 	margin-left: 15px;
+}
+.startMenu #stats
+{
+	height: 200px;
+}
+.startMenu #news
+{
+	height: 90px;
+	width: 300px;
 }
 
 .bottomNavBar
