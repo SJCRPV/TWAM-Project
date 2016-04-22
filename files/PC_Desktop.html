@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+<!-- DON'T FORGET TO CHANGE THE FILE TO A PHP WHEN YOU START IMPLEMENTING SERVER FUNCTIONALITY!!! -->
 	<head>
 		<title>GAME TITLE IS STILL WIP</title>
 		<link rel="stylesheet" type="text/css" href="PC_Desktop.css">
@@ -10,15 +11,15 @@
 		<script>
 		$(function()
 		{
-			$('.topNavBar').css({ height: $(window).innerHeight() * 0.057 });
+			$('.topNavBar').css({ height: $(window).innerHeight() * 0.06 });
 			$('.desktop').css({ height: $(window).innerHeight() * 0.87 });
-			$('.bottomNavBar').css({ height: $(window).innerHeight() * 0.058 });
+			$('.bottomNavBar').css({ height: $(window).innerHeight() * 0.06 });
 		});
 		</script>
 		<meta charset="UTF-8">
 	</head>
 	
-	<body>
+	<body class="no-overflow">
 		<section class="topNavBar bg-gray">
 			<div class="timeControlContainer">
 				<button class="button square-button" id="pauseButton" onclick="stopTime();"><img src="../img/Pause.png"></button>
@@ -29,7 +30,7 @@
 				<button class="button bg-gray" disabled id="gameDate">MON 1 JAN 00:00:00</button>
 			</div>
 			<!-- currentConnection is only supposed to appear when the player is connected to a server -->
-			<div id="currentConnection">Connected to: </div>
+			<!--<div id="currentConnection">Connected to: </div>-->
 		</section>
 		
 		<section class="desktop">
@@ -38,93 +39,125 @@
 			</div>
 			
 			<div id="iconContainer">
-				<!-- swap out the img src with the actual images when you have them -->
-				<a class="tile-small" data-role="tile-small" id="notepad" ondblclick="startNotepad()">
-					<div class = "tile-content">
-						<span class = "tile-label">Notes</span>
-					</div>
+				<!-- add in the img src with the actual images when you have them -->
+				<a class="shortcut-button" id="notepad" ondblclick="startNotepad()">
+					<span class="title">Notes</span>
 				</a>
-				<a class="tile-small" data-role="tile-small" id="map" ondblclick="startMap()">
-				<div class = "tile-content">
-						<span class = "tile-label">Map</span>
-					</div>
+				<a class="shortcut-button" id="map" ondblclick="startMap()">
+					<span class="title">Map</span>
 				</a>
-				<a class="tile-small" data-role="tile-small" id="scripts" ondblclick="openScriptsFolder()">
-					<div class = "tile-content">
-						<span class = "tile-label">Scripts</span>
-					</div>
+				<a class="shortcut-button" id="scripts" ondblclick="openScriptsFolder()">
+					<span class="title">Scripts</span>
 				</a>
-				<a class="tile-small" data-role="tile-small" id="help" ondblclick="startHelp()">
-					<div class = "tile-content">
-						<span class = "tile-label">Help</span>
-					</div>
+				<a class="shortcut-button" id="help" ondblclick="startHelp()">
+					<span class="title">Help</span>
 				</a>
-				<a class="tile-small" data-role="tile-small" id="cmd" ondblclick="startTerminal()">
-					<div class = "tile-content">
-						<span class = "tile-label">Terminal</span>
-					</div>
+				<a class="shortcut-button" id="cmd" ondblclick="startTerminal()">
+					<span class="title">Terminal</span>
 				</a>
-				<a class="tile-small" data-role="tile-small" id="browser" ondblclick="startBrowser()">
-					<div class = "tile-content">
-						<span class = "tile-label">Browser</span>
-					</div>
+				<a class="shortcut-button" id="browser" ondblclick="startBrowser()">
+					<span class="title">Browser</span>
 				</a>
-				<a class="tile-small" data-role="tile-small" id="trash" ondblclick="openTrash()">
-					<div class = "tile-content">
-						<span class = "tile-label">Trash</span>
-					</div>
+				<a class="shortcut-button" id="trash" ondblclick="openTrash()">
+					<span class="title">Trash</span>
 				</a>
-				<a class="tile-small" data-role="tile-small" id="selfDestruct" ondblclick="startSelfDestruct()">
-					<div class = "tile-content">
-						<span class = "tile-label">sd.exe</span>
-					</div>
+				<a class="shortcut-button" id="selfDestruct" ondblclick="startSelfDestruct()">
+					<span class="title">sd.exe</span>
 				</a>
 			</div>
 			
-			<div class="startMenu bg-grayLight">
-				<div class="tile-container">
-					<div class="tile-small tile-square-x" id="profileName">
-						<?php
-							//You go grab the user's chosen login name and display it here. For now, it's Derp.
-						?>
-						<b>Derp</b>
-					</div>
-					<div class="tile-small tile-wide-x bg-cyan" id="news">
-					
-					</div>
-					<div class="tile" id="stats">
+			<div class="startMenu grid bg-grayLight no-display">
+				<div class="row cells2">
+				<!-- Colours are temporary, change them when over -->
+					<ul class="sidebar cell bg-orange bd-black">
+						<li class="align-center" id="profileName">
+							<?php
+								//You go grab the user's chosen login name and display it here. For now, it's Derp.
+							?>
+							<b>Derp</b>
+						</li>
 						
-					</div>
-					<div  id="folders">
-						
-					</div>
-					<div id="settings">
-					
-					</div>
-					<div id="programs">
-					
-					</div>
-					<div id="social">
-					
-					</div>
-					<div id="email">
-					
-					</div>
-					<div id="chat">
-					
-					</div>
+						<li id="stats">
+							<?php
+								//You go and grab all the player's current stats from the server. For now, I'll just have it as random numbers
+							?>
+							<dl class="align-left">
+								<dt>Breaches: 9999</dt>
+								<dt>Infected: 9999</dt>
+								<dt>Lives Ruined: 9999</dt>
+								<dt>Damage(€): 9999M</dt>
+								<dt>€ Stolen: 9999M</dt>
+								<dt>Rating: Sociopathic</dt>
+							</dl>
+						</li>
+						<li id="folders">
+							<h3 class="align-center">FOLDERS</h3>
+						</li>
+						<li id="settings">
+							<h3 class="align-center">SETTINGS</h3>
+						</li>
+						<li id="programs">
+							<h3 class="align-center">PROGRAMS</h3>
+						</li>
+					</ul>
+					<ul class="sidebar cell bg-yellow bd-black">
+						<li id="news">
+							<?php
+								//Grab the news from the database. For now, just a few placeholders
+							?>
+							<dl class="align-left minor-header">
+								<dt>Hacker News:</dt>
+								<dd>- Breach at NoFunAllowed corp!</dd>
+								<dd>- Files stolen from security firm!</dd>
+								<dd>- Notorious hacker still on the run!</dd>
+							</dl>
+						</li>
+						<li id="social">
+							<?php
+								//Grab the social activity from the database. For now, just a few placeholders
+							?>
+							<dl class="align-left minor-header">
+								<dt>Social:</dt>
+								<dd id="socialUsername">420Blazeit @newguy111</dd>
+								<dd id="tweet">@NoFunAllowed got hacked my files are in the open. IM UNSUBBING YOUR SERVICE!!</dd>
+							</dl>
+						</li>
+						<li id="email">
+							<?php
+								//Grab the emails from the database. For now, just a few placeholders
+							?>
+							<!-- There should be, on the bottom corner, the number of unread emails. Metro UI can do that in the Tiles section -->
+							<dl class="align-left minor-header">
+								<dt>Email:</dt>
+								<dd id="sentBy"><b>noreply@funcorp.com</b></dd>
+								<dd id="emailTopic">LKJhkljh01OUSDP801HADhjsdf</dd>
+								<dd id="emailContent">çlafkj2çoLWJDlj1çASDÇ1	sldkjlçal</dd>
+							</dl>
+						</li>
+						<li id="chat">
+							<?php
+								//Grab the chat info from the database. For now, just a few placeholders
+							?>
+							<dl class="align-left minor-header">
+								<dt>Chat:</dt>
+								<dd id="contact">HumanWaste</dd>
+								<dd id="messageContent">Nice work with the No Fun Allowed job. Ive got something else for you if you're interested</dd>
+							</dl>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</section>
 		
-		<section class="bottomNavBar bg-black">
+		<section class="bottomNavBar grid row cells12 bg-black">
 			<div class="row cells12">
-				<button class="button bg-cyan bd-cobalt" id="startMenuButton" onclick="toggleStartMenu()"></button>
-				<div class="cell colspan2 input-control text" data-role="input" id="searchBar"><input type="text" placeholder="Search..."></input></div>
-				<button class="button bg-cyan bd-cobalt" id="windowSwitchButton"><img src="../img/WindowChange.png" class="icon"></div>
-				<div class="cell colspan2"></div>
-				<div class="cell" id="openWindowIconArea"></div>
-				<div class="cell" id="systemIconArea"></div>
+				<button class="button bg-cyan bd-cobalt cell1" id="startMenuButton" onclick="toggleStartMenu()"></button>
+				<div class="input-control text cell2 colspan5" data-role="input" id="searchBar"><input type="text" placeholder="Search..."></input></div>
+				<button class="button bg-cyan bd-cobalt cell3" id="windowSwitchButton"><img src="../img/WindowChange.png" class="icon"></div>
+			
+				<div class="cell colspan2"></div> 
+				<div class="button cell" id="openWindowIconArea"></div>
+				<div class="button cell" id="systemIconArea"></div>
 			</div>
 		</section>
 	</body>

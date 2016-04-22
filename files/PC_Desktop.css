@@ -9,22 +9,8 @@ display:table; }
 
 .topNavBar
 {
-	border: 1px solid red;
 	width: 100%;
 }
-	.timeControls
-	{
-		background-color: #6897bb;
-		border: 1px solid #6897bb;
-		display: inline;
-	}
-	.timeControls:hover
-	{
-		background-color: #6897dd;
-		transition-duration: 0.1s;
-		border: 1px solid #6897dd;
-		display: inline;
-	}
 	#gameDate
 	{
 		margin:0 0 0 30%;
@@ -33,7 +19,6 @@ display:table; }
 
 .desktop
 {
-	border: 1px solid blue;
 	position: relative;
 }
 	#background
@@ -42,22 +27,27 @@ display:table; }
 		width: 100%;
 		position: absolute;
 		z-index: -1;
+		bottom: 2%;
 	}
 		#background img
 		{
-			height: 100%;
+			height: 102%;
 			width: 100%;
 		}
-	.icons
+	#iconContainer
 	{
-		width: 44px;
-		height: 64px;
-		border: 1px solid yellow;
+		width: 100%;
+		height: 100%;
 		position: absolute;
 		z-index: 2;
 		color: white;
 		font-size: 12px;
 		text-align: center;
+	}
+	#iconContainer a
+	{
+		width: 64px;
+		height: 64px;
 	}
 		#notepad
 		{
@@ -137,52 +127,36 @@ display:table; }
 }
 .startMenu #profileName
 {
-	height:30px;
+	height: 30px;
 }
 .startMenu #profileName b
 {
 	font-size: 20px;
 	color: blue;
-	position: relative;
-	z-index: 3;
-	margin-left: 15px;
 }
 .startMenu #stats
 {
-	height: 200px;
+	height:200px;
 }
+.startMenu #email
+{
+	height: 94px;
+}
+.startMenu #chat,
+.startMenu #social,
 .startMenu #news
 {
-	height: 90px;
-	width: 300px;
+	height:96px;
+}
+.startMenu #programs h3,
+.startMenu #settings h3,
+.startMenu #folders h3
+{
+	padding-top: 10px;
 }
 
 .bottomNavBar
 {
-	border: 1px solid green;
+	position: relative;
+	bottom: 2%;
 }
-	#startMenuButton
-	{
-		float:left;
-		display: inline;
-	}
-	#searchBar
-	{
-		float:left;
-		display: inline;
-	}
-	#windowSwitchButton
-	{
-		float:left;
-		display: inline;
-	}
-	#openWindowIconArea
-	{
-		float:left;
-		display: inline;
-	}
-	#systemIconArea
-	{
-		float: right;
-		display: inline;
-	}
