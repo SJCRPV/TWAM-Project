@@ -1,6 +1,6 @@
 //Variables
-var startMenuFlag = false;
 var isPlayerConnected = false;
+var startMenuFlag = false;
 
 //Open program flags
 var isNotepadOpen = false;
@@ -50,7 +50,16 @@ function isPlayerConnected()
 function toggleStartMenu()
 {
 	startMenuFlag = !startMenuFlag;
-	console.log("The statement 'Is the start menu open?' is " + startMenuFlag);
+	if(startMenuFlag)
+	{
+		$(".startMenu").css('opacity', 0);
+		$(".startMenu").css('visibility', 'hidden');
+	}
+	else
+	{
+		$(".startMenu").css('opacity', 100);
+		$(".startMenu").css('visibility', 'visible');
+	}
 }
 
 function togglePlayerConnection()

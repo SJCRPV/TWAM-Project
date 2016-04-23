@@ -6,7 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="PC_Desktop.css">
 		<link href="../Plugins/Metro-UI-CSS-master/build/css/metro.css" rel="stylesheet">
 		<script src="../Plugins/Metro-UI-CSS-master/build/js/metro.js"></script>
-		<script type="text/javascript" src="../Plugins/jquery-2.2.2.min.js"></script>
+		<script type="text/javascript" src="../Plugins/Metro-UI-CSS-master/docs/js/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="PC_Desktop.js"></script>
 		<script>
 		$(function()
@@ -16,6 +16,7 @@
 			$('.bottomNavBar').css({ height: $(window).innerHeight() * 0.06 });
 		});
 		</script>
+		
 		<meta charset="UTF-8">
 	</head>
 	
@@ -40,6 +41,8 @@
 			
 			<div id="iconContainer">
 				<!-- add in the img src with the actual images when you have them -->
+				<!-- I don't know if just doing the icons like normal, instead of using the Metro CSS would be better because they'd be more
+				intuitive to use-->
 				<a class="shortcut-button" id="notepad" ondblclick="startNotepad()">
 					<span class="title">Notes</span>
 				</a>
@@ -66,10 +69,13 @@
 				</a>
 			</div>
 			
-			<div class="startMenu grid bg-grayLight no-display">
-				<div class="row cells2">
+			<div class="startMenu grid bg-grayLight">
+				<script>
+					toggleStartMenu();
+				</script>
+				<div class="row cells2" id="menuLayout">
 				<!-- Colours are temporary, change them when over -->
-					<ul class="sidebar cell bg-orange bd-black">
+					<ul class="sidebar cell bg-orange bd-black" id="leftSide">
 						<li class="align-center" id="profileName">
 							<?php
 								//You go grab the user's chosen login name and display it here. For now, it's Derp.
@@ -79,7 +85,7 @@
 						
 						<li id="stats">
 							<?php
-								//You go and grab all the player's current stats from the server. For now, I'll just have it as random numbers
+								//You go and grab all the player's current stats from the server. For now, I'll just have it as placeholder numbers
 							?>
 							<dl class="align-left">
 								<dt>Breaches: 9999</dt>
@@ -100,7 +106,7 @@
 							<h3 class="align-center">PROGRAMS</h3>
 						</li>
 					</ul>
-					<ul class="sidebar cell bg-yellow bd-black">
+					<ul class="sidebar cell bg-yellow bd-black" id="rightSide">
 						<li id="news">
 							<?php
 								//Grab the news from the database. For now, just a few placeholders
@@ -156,8 +162,8 @@
 				<button class="button bg-cyan bd-cobalt cell3" id="windowSwitchButton"><img src="../img/WindowChange.png" class="icon"></div>
 			
 				<div class="cell colspan2"></div> 
-				<div class="button cell" id="openWindowIconArea"></div>
-				<div class="button cell" id="systemIconArea"></div>
+				<!--<div class="button cell" id="openWindowIconArea"></div>
+				<div class="button cell" id="systemIconArea"></div>-->
 			</div>
 		</section>
 	</body>

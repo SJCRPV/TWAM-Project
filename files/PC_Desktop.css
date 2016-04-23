@@ -116,11 +116,10 @@ display:table; }
 
 .startMenu
 {
-	top: 24.8%;
+	top: 24.5%;
 	right: 0.1%;
 	width: 35%;
 	height: 75%;
-	background-color: #808080;
 	border: 2px solid black;
 	position: relative;
 	z-index: 3;
