@@ -67,6 +67,23 @@ function togglePlayerConnection()
 	$("#currentconnection").toggle();
 }
 
+//Start Menu
+function openMenuFolders()
+{
+	console.log("Opening file explorer");
+}
+
+function openMenuSettings()
+{
+	console.log("Opening the settings menu");
+}
+
+function openMenuPrograms()
+{
+	console.log("Opening the programs list");
+}
+//Start Menu END
+
 //Programs
 function startNotepad()
 {
@@ -74,6 +91,22 @@ function startNotepad()
 	{
 		console.log("Starting Notepad");
 		isNotepadOpen = true;
+		var notepad = $("#notepad").html(' \
+		<span class="title">Notes</span>\
+		<div class="window" data-role="draggable" style="width: 300px; height: 300px; position: absolute; z-index: 1;"> \
+			<div class="window-caption">\
+				<span class="window-caption-icon"">\
+					<span class="mif-file-text"></span>\
+				</span>\
+				<span class="window-caption-title" style="float: left;">Notepad</span>\
+				<span class="btn-min" style="float:right;"></span>\
+				<span class="btn-max" style="float:right;"></span>\
+				<span class="btn-close" style="float:right;"></span>\
+			</div>\
+			<div class="window-content">\
+				<p style="float: left;">Hai</p>\
+			</div>\
+		</div>');
 	}
 	else
 	{
@@ -172,4 +205,21 @@ function startSelfDestruct()
 	{
 		console.log("Self Destruct sequence is already initiated.");
 	}
+}
+//Programs END
+
+//System Icons
+function openVolume()
+{
+	console.log("Opening the volume slider");
+}
+
+function openConnection()
+{
+	console.log("Opening the connection display screen");
+}
+
+function openBattery()
+{
+	console.log("Opening the battery display screen");
 }

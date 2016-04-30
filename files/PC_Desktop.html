@@ -3,10 +3,12 @@
 <!-- DON'T FORGET TO CHANGE THE FILE TO A PHP WHEN YOU START IMPLEMENTING SERVER FUNCTIONALITY!!! -->
 	<head>
 		<title>GAME TITLE IS STILL WIP</title>
+		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="PC_Desktop.css">
-		<link href="../Plugins/Metro-UI-CSS-master/build/css/metro.css" rel="stylesheet">
-		<script src="../Plugins/Metro-UI-CSS-master/build/js/metro.js"></script>
 		<script type="text/javascript" src="../Plugins/Metro-UI-CSS-master/docs/js/jquery-2.1.3.min.js"></script>
+		<link href="../Plugins/Metro-UI-CSS-master/build/css/metro.css" rel="stylesheet">
+		<link href="../Plugins/Metro-UI-CSS-master/build/css/metro-icons.css" rel="stylesheet">
+		<script src="../Plugins/Metro-UI-CSS-master/build/js/metro.js"></script>
 		<script type="text/javascript" src="PC_Desktop.js"></script>
 		<script>
 		$(function()
@@ -16,8 +18,6 @@
 			$('.bottomNavBar').css({ height: $(window).innerHeight() * 0.06 });
 		});
 		</script>
-		
-		<meta charset="UTF-8">
 	</head>
 	
 	<body class="no-overflow">
@@ -27,6 +27,7 @@
 				<button class="button square-button" id="playButton" onclick="startTime(1)"><img src="../img/Play.png"></button>
 				<button class="button square-button" id="playButtonX2" onclick="startTime(2);"><img src="../img/PlayX2.png"></button>
 				<button class="button square-button" id="playButtonX3" onclick="startTime(3);"><img src="../img/PlayX3.png"></button>
+				<button class="button round-button large-button mif-settings-power bg-lightRed fg-black bd-black" id="offButton"></button>
 				<!-- Supposed to go grab the current game time -->
 				<button class="button bg-gray" disabled id="gameDate">MON 1 JAN 00:00:00</button>
 			</div>
@@ -74,8 +75,7 @@
 					toggleStartMenu();
 				</script>
 				<div class="row cells2" id="menuLayout">
-				<!-- Colours are temporary, change them when over -->
-					<ul class="sidebar cell bg-orange bd-black" id="leftSide">
+					<ul class="sidebar cell bg-grayLight bd-black" id="leftSide">
 						<li class="align-center" id="profileName">
 							<?php
 								//You go grab the user's chosen login name and display it here. For now, it's Derp.
@@ -83,7 +83,7 @@
 							<b>Derp</b>
 						</li>
 						
-						<li id="stats">
+						<li class="bg-hover-grayLighter fg-hover-grayDarker" id="stats">
 							<?php
 								//You go and grab all the player's current stats from the server. For now, I'll just have it as placeholder numbers
 							?>
@@ -96,18 +96,18 @@
 								<dt>Rating: Sociopathic</dt>
 							</dl>
 						</li>
-						<li id="folders">
+						<li class="bg-hover-grayLighter fg-hover-grayDarker" onclick="openMenuFolders()" id="folders">
 							<h3 class="align-center">FOLDERS</h3>
 						</li>
-						<li id="settings">
+						<li class="bg-hover-grayLighter fg-hover-grayDarker" onclick="openMenuSettings()" id="settings">
 							<h3 class="align-center">SETTINGS</h3>
 						</li>
-						<li id="programs">
+						<li class="bg-hover-grayLighter fg-hover-grayDarker" onclick="openMenuPrograms()" id="programs">
 							<h3 class="align-center">PROGRAMS</h3>
 						</li>
 					</ul>
-					<ul class="sidebar cell bg-yellow bd-black" id="rightSide">
-						<li id="news">
+					<ul class="sidebar cell bg-grayLight" id="rightSide">
+						<li class="bg-cyan" id="news">
 							<?php
 								//Grab the news from the database. For now, just a few placeholders
 							?>
@@ -118,7 +118,7 @@
 								<dd>- Notorious hacker still on the run!</dd>
 							</dl>
 						</li>
-						<li id="social">
+						<li class="bg-cyan" id="social">
 							<?php
 								//Grab the social activity from the database. For now, just a few placeholders
 							?>
@@ -128,7 +128,7 @@
 								<dd id="tweet">@NoFunAllowed got hacked my files are in the open. IM UNSUBBING YOUR SERVICE!!</dd>
 							</dl>
 						</li>
-						<li id="email">
+						<li class="bg-cyan" id="email">
 							<?php
 								//Grab the emails from the database. For now, just a few placeholders
 							?>
@@ -140,7 +140,7 @@
 								<dd id="emailContent">çlafkj2çoLWJDlj1çASDÇ1	sldkjlçal</dd>
 							</dl>
 						</li>
-						<li id="chat">
+						<li class="bg-cyan" id="chat">
 							<?php
 								//Grab the chat info from the database. For now, just a few placeholders
 							?>
@@ -155,15 +155,42 @@
 			</div>
 		</section>
 		
-		<section class="bottomNavBar grid row cells12 bg-black">
-			<div class="row cells12">
-				<button class="button bg-cyan bd-cobalt cell1" id="startMenuButton" onclick="toggleStartMenu()"></button>
-				<div class="input-control text cell2 colspan5" data-role="input" id="searchBar"><input type="text" placeholder="Search..."></input></div>
-				<button class="button bg-cyan bd-cobalt cell3" id="windowSwitchButton"><img src="../img/WindowChange.png" class="icon"></div>
-			
-				<div class="cell colspan2"></div> 
-				<!--<div class="button cell" id="openWindowIconArea"></div>
-				<div class="button cell" id="systemIconArea"></div>-->
+		<section class="bottomNavBar bg-black toolbar">			
+			<div class="toolbar-section" id="startMenuSection">
+				<button class="button bg-cyan bd-cobalt" id="startMenuButton" onclick="toggleStartMenu()"></button>
+				<div class="input-control text" data-role="input" id="searchBar"><input type="text" placeholder="Search..."></input></div>
+				<button class="button bg-cyan bd-cobalt" id="windowSwitchButton"><img src="../img/WindowChange.png" class="icon"></button>
+			</div>
+			<div class="toolbar-section" id="openWindowArea">
+				<!--What this is supposed to do is to call a function that will look into an array of multiple buttons that gain and lose attributes
+				depending on what windows are open.-->
+				<button class="button openWindows bg-black bd-black" id="openWindow1"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow2"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow3"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow4"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow5"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow6"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow7"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow8"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow9"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow10"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow11"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow12"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow13"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow14"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow15"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow16"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow17"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow18"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow19"></button>
+				<button class="button openWindows bg-black bd-black" id="openWindow20"></button>
+				<!-- Open windows END -->
+			</div>
+			<div class="toolbar-section" id="systemIconArea">	
+				<div class="toolbar-button bg-black bd-black mif-volume-high fg-white" id="volume" onclick="openVolume()"></div>
+				<div class="toolbar-button bg-black bd-black mif-wifi-full fg-white" id="connection" onclick="openConnection()"></div>
+				<div class="toolbar-button bg-black bd-black mif-battery-charge fg-white" id="battery" onclick="openBattery()"></div>
+				<div class="toolbar-button bg-black bd-black fg-white" id="language" onclick="openLanguage()">EN</div>
 			</div>
 		</section>
 	</body>

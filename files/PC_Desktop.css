@@ -16,6 +16,10 @@ display:table; }
 		margin:0 0 0 30%;
 		border: 1px solid orange;
 	}
+	#offButton
+	{
+		float: right;
+	}
 
 .desktop
 {
@@ -124,38 +128,73 @@ display:table; }
 	position: relative;
 	z-index: 3;
 }
-.startMenu #profileName
-{
-	height: 30px;
-}
-.startMenu #profileName b
-{
-	font-size: 20px;
-	color: blue;
-}
-.startMenu #stats
-{
-	height:200px;
-}
-.startMenu #email
-{
-	height: 94px;
-}
-.startMenu #chat,
-.startMenu #social,
-.startMenu #news
-{
-	height:96px;
-}
-.startMenu #programs h3,
-.startMenu #settings h3,
-.startMenu #folders h3
-{
-	padding-top: 10px;
-}
+	#profileName,
+	#stats,
+	#email,
+	#chat,
+	#social,
+	#news,
+	#programs,
+	#settings,
+	#folders
+	{
+		/*border: 1px solid black;*/
+	}
+	#profileName
+	{
+		height: 30px;
+	}
+	#profileName b
+	{
+		font-size: 20px;
+		color: blue;
+	}
+	#stats
+	{
+		height:200px;
+	}
+	#email
+	{
+		height: 94px;
+	}
+	#chat,
+	#social,
+	#news
+	{
+		height:96px;
+	}
+	#programs h3,
+	#settings h3,
+	#folders h3
+	{
+		padding-top: 10px;
+	}
 
 .bottomNavBar
 {
 	position: relative;
-	bottom: 2%;
+	bottom: 0.5%;
 }
+	#windowSwitchButton
+	{
+		margin-right: 25px;
+	}
+	#openWindowArea
+	{
+		visibility: hidden;
+	}
+	#systemIconArea
+	{
+	}
+		#language,
+		#battery,
+		#connection,
+		#volume
+		{
+			padding-top: 8px;
+		}
+	.openWindows
+	{
+		width: 40px;
+	}
+	
