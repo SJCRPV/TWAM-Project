@@ -91,22 +91,8 @@ function startNotepad()
 	{
 		console.log("Starting Notepad");
 		isNotepadOpen = true;
-		var notepad = $("#notepad").html(' \
-		<span class="title">Notes</span>\
-		<div class="window" data-role="draggable" style="width: 300px; height: 300px; position: absolute; z-index: 1;"> \
-			<div class="window-caption">\
-				<span class="window-caption-icon"">\
-					<span class="mif-file-text"></span>\
-				</span>\
-				<span class="window-caption-title" style="float: left;">Notepad</span>\
-				<span class="btn-min" style="float:right;"></span>\
-				<span class="btn-max" style="float:right;"></span>\
-				<span class="btn-close" style="float:right;"></span>\
-			</div>\
-			<div class="window-content">\
-				<p style="float: left;">Hai</p>\
-			</div>\
-		</div>');
+		var notepadWindow = new Window("Notepad", 300, 250, "mif-file-text");
+		var notepad = $("#notepad").html('<span class="title">Notes</span> ' + notepadWindow.windowHtml());
 	}
 	else
 	{
@@ -120,6 +106,8 @@ function startMap()
 	{
 		console.log("Starting Map");
 		isMapOpen = true;
+		var mapWindow = new Window("Map", 400, 700, "mif-earth2");
+		var map = $("#map").html('<span class="title">Map</span> ' + mapWindow.windowHtml());
 	}
 	else
 	{
@@ -133,6 +121,8 @@ function openScriptsFolder()
 	{
 		console.log("Opening the Scripts folder");
 		isScriptsOpen = true;
+		var scriptsFolderWindow = new Window("Scripts", 400, 500, "mif-folder-open");
+		var scripts = $("#scripts").html('<span class="title">Scripts</span> ' + scriptsFolderWindow.windowHtml());
 	}
 	else
 	{
@@ -146,6 +136,8 @@ function startHelp()
 	{
 		console.log("Starting Help");
 		isHelpOpen = true;
+		var helpWindow = new Window("Help", 400, 500, "mif-question");
+		var help = $("#help").html('<span class="title">Help</span> ' + helpWindow.windowHtml());
 	}
 	else
 	{
@@ -159,6 +151,8 @@ function startTerminal()
 	{
 		console.log("Starting Terminal");
 		isTerminalOpen = true;
+		var terminalWindow = new Window("Terminal", 200, 500, "mif-embed2", "black", "white");
+		var terminal = $("#cmd").html('<span class="title">Terminal</span> ' + terminalWindow.windowHtml());
 	}
 	else
 	{
@@ -172,6 +166,8 @@ function startBrowser()
 	{
 		console.log("Starting Browser");
 		isBrowserOpen = true;
+		var browserWindow = new Window("Browser", 400, 600, "mif-squirrel");
+		var browser = $("#browser").html('<span class="title">Browser</span> ' + browserWindow.windowHtml());
 	}
 	else
 	{
@@ -185,6 +181,8 @@ function openTrash()
 	{
 		console.log("Opening the Trash");
 		isTrashOpen = true;
+		var trashWindow = new Window("Trash", 200, 500, "mif-bin");
+		var trash = $("#trash").html('<span class="title">Trash</span> ' + trashWindow.windowHtml());
 	}
 	else
 	{
@@ -200,6 +198,8 @@ function startSelfDestruct()
 	{
 		console.log("Initiating Self Destruct sequence...");
 		isSDOpen = true;
+		var sdWindow = new Window("sd.exe", 200, 500, "mif-fire", "black", "white");
+		var sd = $("#selfDestruct").html('<span class="title">sd.exe</span> ' + sdWindow.windowHtml());
 	}
 	else
 	{
