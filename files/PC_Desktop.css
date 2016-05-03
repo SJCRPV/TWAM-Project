@@ -1,0 +1,192 @@
+/* Micro Clearfix For modern browsers */
+.cf:before, .cf:after { content:"";
+display:table; }
+.cf:after { clear:both; }
+/* For IE 6/7 (trigger hasLayout) */
+.cf { *zoom:1; }
+#esq, #dir{ border: 1px solid red}
+#all{border: 1px solid red}
+
+.topNavBar
+{
+	width: 100%;
+}
+	#gameDate
+	{
+		margin:0 0 0 30%;
+		border: 1px solid orange;
+	}
+	#offButton
+	{
+		float: right;
+	}
+
+.desktop
+{
+	position: relative;
+}
+	#background
+	{
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		z-index: -1;
+		bottom: 2%;
+	}
+		#background img
+		{
+			height: 102%;
+			width: 100%;
+		}
+	#iconContainer
+	{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 2;
+		color: white;
+		font-size: 12px;
+		text-align: center;
+	}
+	#iconContainer a
+	{
+		width: 64px;
+		height: 64px;
+	}
+		#notepad
+		{
+			/*Position (1, 1)*/
+			position: absolute;
+			top: 5%;
+			left: 2%;
+		}
+		#map
+		{
+			/*Position (2, 1)*/
+			position: absolute;
+			top: 18%;
+			left: 2%;
+		}
+		#scripts
+		{
+			/*Position (1, 2)*/
+			position: absolute;
+			top: 5%;
+			left: 8%;
+		}
+		#help
+		{
+			/*Position (2, 2)*/
+			position: absolute;
+			top: 18%;
+			left: 8%;
+		}
+		#cmd
+		{
+			/*Position (3, 1)*/
+			position: absolute;
+			top: 31%;
+			left: 2%;
+		}
+		#browser
+		{
+			/*Position (3, 2)*/
+			position: absolute;
+			top: 31%;
+			left: 8%;
+		}
+		#trash
+		{
+			/*Position: Bottom right*/
+			position: absolute;
+			top: 72%;
+			left: 94%;
+		}
+		#selfDestruct
+		{
+			/*Position: Bottom right*/
+			position: absolute;
+			top: 85%;
+			left: 94%;
+		}
+
+.startMenu
+{
+	top: 24.5%;
+	right: 0.1%;
+	width: 35%;
+	height: 75%;
+	border: 2px solid black;
+	position: relative;
+	z-index: 3;
+}
+	#profileName,
+	#stats,
+	#email,
+	#chat,
+	#social,
+	#news,
+	#programs,
+	#settings,
+	#folders
+	{
+		/*border: 1px solid black;*/
+	}
+	#profileName
+	{
+		height: 30px;
+	}
+	#profileName b
+	{
+		font-size: 20px;
+		color: blue;
+	}
+	#stats
+	{
+		height:200px;
+	}
+	#email
+	{
+		height: 94px;
+	}
+	#chat,
+	#social,
+	#news
+	{
+		height:96px;
+	}
+	#programs h3,
+	#settings h3,
+	#folders h3
+	{
+		padding-top: 10px;
+	}
+
+.bottomNavBar
+{
+	position: relative;
+	bottom: 0.5%;
+}
+	#windowSwitchButton
+	{
+		margin-right: 25px;
+	}
+	#openWindowArea
+	{
+		visibility: hidden;
+	}
+	#systemIconArea
+	{
+	}
+		#language,
+		#battery,
+		#connection,
+		#volume
+		{
+			padding-top: 8px;
+		}
+	.openWindows
+	{
+		width: 40px;
+	}
+	
