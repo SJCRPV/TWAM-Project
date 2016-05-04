@@ -91,11 +91,14 @@ function startNotepad()
 	{
 		console.log("Starting Notepad");
 		isNotepadOpen = true;
-		var notepadWindow = new Window("Notepad", 300, 250, "mif-file-text");
-		var notepad = $("#notepad").html('<span class="title">Notes</span> ' + notepadWindow.windowHtml());
+		notepadWindow = new Window("Notepad", 300, 250, "mif-file-text");
+		var notepad = $("#notepad").html('<span class="title">Notes</span> ' +  notepadWindow.windowHtml());
+		
 	}
 	else
 	{
+		
+		notepadWindow.vis(Notepad);
 		console.log("Notepad is already open");
 	}
 }
@@ -106,11 +109,12 @@ function startMap()
 	{
 		console.log("Starting Map");
 		isMapOpen = true;
-		var mapWindow = new Window("Map", 400, 700, "mif-earth2");
+		mapWindow = new Window("Map", 400, 700, "mif-earth2");
 		var map = $("#map").html('<span class="title">Map</span> ' + mapWindow.windowHtml());
 	}
 	else
 	{
+		mapWindow.vis(Map);
 		console.log("Map is already open");
 	}
 }
@@ -121,11 +125,12 @@ function openScriptsFolder()
 	{
 		console.log("Opening the Scripts folder");
 		isScriptsOpen = true;
-		var scriptsFolderWindow = new Window("Scripts", 400, 500, "mif-folder-open");
+		scriptsFolderWindow = new Window("Scripts", 400, 500, "mif-folder-open");
 		var scripts = $("#scripts").html('<span class="title">Scripts</span> ' + scriptsFolderWindow.windowHtml());
 	}
 	else
 	{
+		scriptsFolderWindow.vis();
 		console.log("Scripts folder is already open");
 	}
 }
@@ -136,11 +141,12 @@ function startHelp()
 	{
 		console.log("Starting Help");
 		isHelpOpen = true;
-		var helpWindow = new Window("Help", 400, 500, "mif-question");
+		helpWindow = new Window("Help", 400, 500, "mif-question");
 		var help = $("#help").html('<span class="title">Help</span> ' + helpWindow.windowHtml());
 	}
 	else
 	{
+		helpWindow.vis()
 		console.log("Help is already open");
 	}
 }
@@ -151,11 +157,12 @@ function startTerminal()
 	{
 		console.log("Starting Terminal");
 		isTerminalOpen = true;
-		var terminalWindow = new Window("Terminal", 200, 500, "mif-embed2", "black", "white");
+		terminalWindow = new Window("Terminal", 200, 500, "mif-embed2", "black", "white");
 		var terminal = $("#cmd").html('<span class="title">Terminal</span> ' + terminalWindow.windowHtml());
 	}
 	else
 	{
+		terminalWindow.vis();
 		console.log("Terminal is already open");
 	}
 }
@@ -166,11 +173,12 @@ function startBrowser()
 	{
 		console.log("Starting Browser");
 		isBrowserOpen = true;
-		var browserWindow = new Window("Browser", 400, 600, "mif-squirrel");
+		browserWindow = new Window("Browser", 400, 600, "mif-squirrel");
 		var browser = $("#browser").html('<span class="title">Browser</span> ' + browserWindow.windowHtml());
 	}
 	else
 	{
+		browserWindow.vis();
 		console.log("Browser is already open");
 	}
 }
@@ -181,11 +189,12 @@ function openTrash()
 	{
 		console.log("Opening the Trash");
 		isTrashOpen = true;
-		var trashWindow = new Window("Trash", 200, 500, "mif-bin");
+		trashWindow = new Window("Trash", 200, 500, "mif-bin");
 		var trash = $("#trash").html('<span class="title">Trash</span> ' + trashWindow.windowHtml());
 	}
 	else
 	{
+		trashWindow.vis();
 		console.log("Trash is already open");
 	}
 }
