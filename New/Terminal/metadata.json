@@ -1,0 +1,18 @@
+{
+  "className": "ApplicationTerminal",
+  "name": "Terminal",
+  "mime": null,
+  "icon": "apps/terminal.png",
+  "preload": [
+    {
+      "src": "main.js",
+      "type": "javascript"
+    },
+    {
+      "src": "main.css",
+      "type": "stylesheet"
+    }
+  ],
+  "singular": false,
+  "category": "utilities"
+}

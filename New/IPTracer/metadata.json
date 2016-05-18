@@ -1,0 +1,18 @@
+{
+  "className": "ApplicationIPTracer",
+  "name": "IPTracer",
+  "mime": null,
+  "icon": "actions/kfind.png",
+  "preload": [
+    {
+      "src": "main.js",
+      "type": "javascript"
+    },
+    {
+      "src": "main.css",
+      "type": "stylesheet"
+    }
+  ],
+  "singular": false,
+  "category": "system"
+}

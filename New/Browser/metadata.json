@@ -1,0 +1,18 @@
+{
+  "className": "ApplicationBrowser",
+  "name": "Browser",
+  "mime": null,
+  "icon": "categories/applications-system.png",
+  "preload": [
+    {
+      "src": "main.js",
+      "type": "javascript"
+    },
+    {
+      "src": "main.css",
+      "type": "stylesheet"
+    }
+  ],
+  "singular": false,
+  "category": "graphics"
+}
