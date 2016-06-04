@@ -31,3 +31,10 @@
 .ApplicationMapWindow application-window-content {
 }
 
+.ApplicationMapWindow gui-vbox[data-id="grid"] *
+{
+	width: 30px;
+	height: 30px;
+	margin: 0px;
+}
+

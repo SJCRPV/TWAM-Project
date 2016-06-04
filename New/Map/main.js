@@ -25,7 +25,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * @author  Anders Evenrud <andersevenrud@gmail.com>
- * @licence Simplified BSD License
+ * @licence Simplified BSD License (function(API, Utils, DialogWindow) {
  */
 (function(Application, Window, Utils, API, VFS, GUI) {
   'use strict';
@@ -53,6 +53,9 @@
     // Load and set up scheme (GUI) here
     scheme.render(this, 'MapWindow', root);
 
+	
+	this._find('Mbone').son('hover', this, this.onMyButtonClick);
+	
     return root;
   };
 
@@ -87,13 +90,50 @@
 
     this._setScheme(scheme);
   };
-
+  
+	console.log("Yo!");
+  
+	function AlertDialog(args, callback) {
+		args = Utils.argumentDefaults(args, {});
+		DialogWindow.apply(this, ['AlertDialog', {
+		  title: args.title || API._('DIALOG_ALERT_TITLE'),
+		  icon: 'status/dialog-warning.png',
+		  width: 400,
+		  height: 100
+		}, args, callback]);
+	};
+	
+	
+	
+	ApplicationMapWindow.prototype.onMyButtonClick = function(el, ev) {
+			console.log('CLICKED');
+			API.createDialog('Alert',{
+				message: 'Foo'
+				}, function(){
+					console.log('closed');
+			});
+			
+			API.error('Error','Fuck the police','23');
+			
+			
+		};
+	
+	
   /////////////////////////////////////////////////////////////////////////////
   // EXPORTS
   /////////////////////////////////////////////////////////////////////////////
+
 
   OSjs.Applications = OSjs.Applications || {};
   OSjs.Applications.ApplicationMap = OSjs.Applications.ApplicationMap || {};
   OSjs.Applications.ApplicationMap.Class = ApplicationMap;
 
 })(OSjs.Core.Application, OSjs.Core.Window, OSjs.Utils, OSjs.API, OSjs.VFS, OSjs.GUI);
+
+
+
+
+  
+
+
+

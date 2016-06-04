@@ -1,45 +1,99 @@
 <application-window data-id="MapWindow" data-width="723" data-height="494" data-allow_resize="true">
-	<gui-vbox>
-		<gui-vbox-container data-shrink="1" data-grow="0" data-fill="false" data-expand="false" data-basis="auto">
-			<gui-hbox>
-				<gui-hbox-container data-shrink="0" data-grow="0">
-					<gui-menu-bar>
-						<gui-menu-bar-entry data-label="Load" data-disabled="false" data-id="loadMenu">
-							<gui-menu>
-								<gui-menu-bar-entry data-label="Previous Connection" data-disabled="false" data-id="lastConnection"></gui-menu-bar-entry>
-								<gui-menu-bar-entry data-label="Saved Connection" data-disabled="false" data-id="loadSavedConnection">
-									<gui-menu>
-										<gui-menu-bar-entry data-label="Load 1" data-disabled="false" data-id="connection1"></gui-menu-bar-entry>
-										<gui-menu-bar-entry data-label="Load 2" data-disabled="false" data-id="connection2"></gui-menu-bar-entry>
-										<gui-menu-bar-entry data-label="Load 3" data-disabled="false" data-id="connection3"></gui-menu-bar-entry>
-										<gui-menu-bar-entry data-label="Load 4" data-disabled="false" data-id="connection4"></gui-menu-bar-entry>
-										<gui-menu-bar-entry data-label="Load 5" data-disabled="false" data-id="connection5"></gui-menu-bar-entry>
-									</gui-menu>
-								</gui-menu-bar-entry>
-							</gui-menu>
-						</gui-menu-bar-entry>
-					</gui-menu-bar>
-				</gui-hbox-container>
-			
-				<gui-hbox-container data-shrink="1" data-grow="0">
-					<gui-menu-bar>
-						<gui-menu-bar-entry data-label="Save" data-id="saveMenu">
-							<gui-menu>
-								<gui-menu-bar-entry data-label="Save 1" data-disabled="false" data-id="saveConnection1"></gui-menu-bar-entry>
-								<gui-menu-bar-entry data-label="Save 2" data-disabled="false" data-id="saveConnection2"></gui-menu-bar-entry>
-								<gui-menu-bar-entry data-label="Save 3" data-disabled="false" data-id="saveConnection3"></gui-menu-bar-entry>
-								<gui-menu-bar-entry data-label="Save 4" data-disabled="false" data-id="saveConnection4"></gui-menu-bar-entry>
-								<gui-menu-bar-entry data-label="Save 5" data-disabled="false" data-id="saveConnection5"></gui-menu-bar-entry>
-							</gui-menu>
-						</gui-menu-bar-entry>
-					</gui-menu-bar>
-				</gui-hbox-container>
-			</gui-hbox>
-		</gui-vbox-container>
-		
-		<gui-vbox-container data-shrink="1" data-grow="10" data-expand="true" data-fill="true">
-	
-		<gui-iframe data-src="" data-id="map"></gui-iframe>
-		</gui-vbox-container>
-	</gui-vbox>
+   <gui-vbox>
+		<!-- MENU BAR! -->
+      <gui-vbox-container data-shrink="1" data-grow="0" data-fill="false" data-expand="false" data-basis="auto">
+         <gui-hbox>
+            <gui-hbox-container data-shrink="0" data-grow="0">
+               <gui-menu-bar>
+                  <gui-menu-bar-entry data-label="Load" data-disabled="false" data-id="loadMenu">
+                     <gui-menu>
+                        <gui-menu-bar-entry data-label="Previous Connection" data-disabled="false" data-id="lastConnection"></gui-menu-bar-entry>
+                        <gui-menu-bar-entry data-label="Saved Connection" data-disabled="false" data-id="loadSavedConnection">
+                           <gui-menu>
+                              <gui-menu-bar-entry data-label="Load 1" data-disabled="false" data-id="connection1"></gui-menu-bar-entry>
+                              <gui-menu-bar-entry data-label="Load 2" data-disabled="false" data-id="connection2"></gui-menu-bar-entry>
+                              <gui-menu-bar-entry data-label="Load 3" data-disabled="false" data-id="connection3"></gui-menu-bar-entry>
+                              <gui-menu-bar-entry data-label="Load 4" data-disabled="false" data-id="connection4"></gui-menu-bar-entry>
+                              <gui-menu-bar-entry data-label="Load 5" data-disabled="false" data-id="connection5"></gui-menu-bar-entry>
+                           </gui-menu>
+                        </gui-menu-bar-entry>
+                     </gui-menu>
+                  </gui-menu-bar-entry>
+               </gui-menu-bar>
+            </gui-hbox-container>
+            <gui-hbox-container data-shrink="1" data-grow="0">
+               <gui-menu-bar>
+                  <gui-menu-bar-entry data-label="Save" data-id="saveMenu">
+                     <gui-menu>
+                        <gui-vbox>
+                           <gui-vbox-container data-shrink="1" data-grow="0">
+                              <gui-menu-bar-entry data-label="Save 1" data-disabled="false" data-id="saveConnection1"></gui-menu-bar-entry>
+                           </gui-vbox-container>
+                        </gui-vbox>
+                        <gui-vbox>
+                           <gui-vbox-container data-shrink="1" data-grow="0">
+                              <gui-menu-bar-entry data-label="Save 2" data-disabled="false" data-id="saveConnection2"></gui-menu-bar-entry>
+                           </gui-vbox-container>
+                        </gui-vbox>
+                        <gui-vbox>
+                           <gui-vbox-container data-shrink="1" data-grow="0">
+                              <gui-menu-bar-entry data-label="Save 3" data-disabled="false" data-id="saveConnection3"></gui-menu-bar-entry>
+                           </gui-vbox-container>
+                        </gui-vbox>
+                        <gui-vbox>
+                           <gui-vbox-container data-shrink="1" data-grow="0">
+                              <gui-menu-bar-entry data-label="Save 4" data-disabled="false" data-id="saveConnection4"></gui-menu-bar-entry>
+                           </gui-vbox-container>
+                        </gui-vbox>
+                        <gui-vbox>
+                           <gui-vbox-container data-shrink="1" data-grow="0">
+                              <gui-menu-bar-entry data-label="Save 5" data-disabled="false" data-id="saveConnection5"></gui-menu-bar-entry>
+                           </gui-vbox-container>
+                        </gui-vbox>
+                     </gui-menu>
+                  </gui-menu-bar-entry>
+               </gui-menu-bar>
+            </gui-hbox-container>
+         </gui-hbox>
+      </gui-vbox-container>
+	  <!-- MAP WINDOW -->
+      <gui-vbox-container data-shrink="1" data-grow="0" data-expand="false" data-fill="false">
+		<gui-button data-id="Mbone" disabled="false">Mbone</gui-button>
+			<gui-vbox-container data-fill="true">
+				<gui-vbox>
+					<!--<gui-image data-src="https://redverzdakar.files.wordpress.com/2012/12/5501-world-map-1920x1200-digital-art-wallpaper.jpg"></gui-image>-->
+					<gui-image data-src="app://worldMap.png"></gui-image>
+				</gui-vbox>
+			</gui-vbox-container>
+			<!-- GRID -->
+				<gui-vbox data-id="grid">
+					<gui-vbox-container data-grow="0">
+						<gui-hbox>
+							<gui-hbox-container><gui-button>A0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>A1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>A2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>A3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>A4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container data-grow="0">
+						<gui-hbox>
+							<gui-hbox-container><gui-button>B0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>B1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>B2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>B3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>B4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container data-grow="0">
+						<gui-hbox>
+							<gui-hbox-container><gui-button>C0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>C1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>C2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>C3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>C4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container data-grow="0">
+						<gui-hbox>
+							<gui-hbox-container><gui-button>D0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>D1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>D2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>D3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>D4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container data-grow="0">
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+				</gui-vbox>
+			<!--GRID END-->
+	  </gui-vbox-container>
+   </gui-vbox>
 </application-window>
