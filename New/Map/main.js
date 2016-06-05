@@ -54,7 +54,18 @@
     scheme.render(this, 'MapWindow', root);
 
 	
-	this._find('Mbone').son('hover', this, this.onMyButtonClick);
+	// this._find('Mbone').son('click', this, this.onMyButtonClick());
+	
+	var grid = createGrid(10,10);
+	var newGrid = new Object();
+	newGrid = this._find('Grid');
+	console.log(newGrid);
+	
+	//newGrid.$element = grid;
+	newGrid.$element.innerHTML = grid;
+	console.log(newGrid.$element.innerHTML);
+	
+	// document.getElementById("noGrid").innerHTML = grid;
 	
     return root;
   };
@@ -87,7 +98,6 @@
     scheme.load(function(error, result) {
       self._addWindow(new ApplicationMapWindow(self, metadata, scheme));
     });
-
     this._setScheme(scheme);
   };
   
@@ -103,20 +113,52 @@
 		}, args, callback]);
 	};
 	
+	function createGrid(rows, columns)
+	{
+		var letter = 65;
+		
+		var string1 = '<gui-vbox-container data-grow="0">\
+							<gui-hbox>';
+		// var string2 = '<gui-hbox-container><gui-button>' + String.fromCharCode(letter) + 0 + '</gui-button></gui-hbox-contianer>';
+		var string3 = 		'</gui-hbox> \
+						</gui-vbox-container>\n';
+		// for(var i = 0; i < rows; i++, letter++)
+		// {
+			for(var j = 0; j < columns; j++)
+			{
+				var string2 = string2 + '<gui-hbox-container><gui-button>' + String.fromCharCode(letter) + j + '</gui-button></gui-hbox-contianer>';
+			}
+			// var finalString = string1 + string2 + string3;
+		// }
+		var finalString = string1 + string2 + string3;
+		console.log("Hey. Just finished making the grid.");
+		// console.log(finalString);
+		
+		return finalString;
+		
+		// var tempString = '\
+		// <gui-vbox-container data-grow="0">
+			// <gui-hbox>
+				// <gui-hbox-container>
+					// <gui-button>
+						// A0
+					// </gui-button>
+				// </gui-hbox-container>
+			// </gui-hbox>
+		// </gui-vbox-container>
+	}
 	
-	
-	ApplicationMapWindow.prototype.onMyButtonClick = function(el, ev) {
-			console.log('CLICKED');
-			API.createDialog('Alert',{
-				message: 'Foo'
-				}, function(){
-					console.log('closed');
-			});
+	ApplicationMapWindow.prototype.onMyButtonClick = function(el, ev) 
+	{
+		console.log('CLICKED');
+		API.createDialog('Alert',{
+			message: 'Foo'
+			}, function(){
+				console.log('closed');
+		});
 			
-			API.error('Error','Fuck the police','23');
-			
-			
-		};
+		API.error('Error','Fuck the police','23');	
+	};
 	
 	
   /////////////////////////////////////////////////////////////////////////////

@@ -1,4 +1,4 @@
-<application-window data-id="MapWindow" data-width="723" data-height="494" data-allow_resize="true">
+<application-window data-id="MapWindow" data-width="723" data-height="494" data-allow_resize="false">
    <gui-vbox>
 		<!-- MENU BAR! -->
       <gui-vbox-container data-shrink="1" data-grow="0" data-fill="false" data-expand="false" data-basis="auto">
@@ -61,37 +61,148 @@
 		<gui-button data-id="Mbone" disabled="false">Mbone</gui-button>
 			<gui-vbox-container data-fill="true">
 				<gui-vbox>
-					<!--<gui-image data-src="https://redverzdakar.files.wordpress.com/2012/12/5501-world-map-1920x1200-digital-art-wallpaper.jpg"></gui-image>-->
-					<gui-image data-src="app://worldMap.png"></gui-image>
+					<gui-image data-src="http://i.imgur.com/J7b4VZ1.png"></gui-image>
+					 <!--<gui-image data-src="worldMap.png"></gui-image> -->
 				</gui-vbox>
 			</gui-vbox-container>
 			<!-- GRID -->
-				<gui-vbox data-id="grid">
-					<gui-vbox-container data-grow="0">
-						<gui-hbox>
+				<gui-vbox data-id="Grid" data-shrink="1" data-grow="0" data-expand="false" data-fill="false">
+					<!-- <p data-id="Grid2">token</p> -->
+<!-- 					<gui-vbox-container>
+						<gui-hbox data-grow="0">
 							<gui-hbox-container><gui-button>A0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>A1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>A2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>A3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>A4</gui-button></gui-hbox-container>
 						</gui-hbox>
 					</gui-vbox-container>
-					<gui-vbox-container data-grow="0">
+					<gui-vbox-container>
 						<gui-hbox>
 							<gui-hbox-container><gui-button>B0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>B1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>B2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>B3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>B4</gui-button></gui-hbox-container>
 						</gui-hbox>
 					</gui-vbox-container>
-					<gui-vbox-container data-grow="0">
+					<gui-vbox-container >
 						<gui-hbox>
 							<gui-hbox-container><gui-button>C0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>C1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>C2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>C3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>C4</gui-button></gui-hbox-container>
 						</gui-hbox>
 					</gui-vbox-container>
-					<gui-vbox-container data-grow="0">
+					<gui-vbox-container >
 						<gui-hbox>
 							<gui-hbox-container><gui-button>D0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>D1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>D2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>D3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>D4</gui-button></gui-hbox-container>
 						</gui-hbox>
 					</gui-vbox-container>
-					<gui-vbox-container data-grow="0">
+					<gui-vbox-container >
 						<gui-hbox>
 							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
 						</gui-hbox>
 					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>
+					<gui-vbox-container >
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+ 					</gui-vbox-container>
+					<gui-vbox-container>
+						<gui-hbox>
+							<gui-hbox-container><gui-button>E0</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E1</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E2</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E3</gui-button></gui-hbox-container><gui-hbox-container><gui-button>E4</gui-button></gui-hbox-container>
+						</gui-hbox>
+					</gui-vbox-container>-->
 				</gui-vbox>
 			<!--GRID END-->
 	  </gui-vbox-container>

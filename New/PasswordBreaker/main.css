@@ -28,12 +28,6 @@
  * @licence Simplified BSD License
  */
 
-.ApplicationMapWindow application-window-content {
+.ApplicationPasswordBreakerWindow application-window-content {
 }
 
-.ApplicationMapWindow gui-vbox[data-id="Grid"] * 
-{
-	height: 30px;
-	width: 30px;
-	margin: 0px;
-}
