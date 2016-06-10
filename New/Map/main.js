@@ -25,11 +25,15 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * @author  Anders Evenrud <andersevenrud@gmail.com>
- * @licence Simplified BSD License
+ * @licence Simplified BSD License (function(API, Utils, DialogWindow) {
  */
 (function(Application, Window, Utils, API, VFS, GUI) {
   'use strict';
 
+  var self;
+  var url;
+  var scheme;
+  
   /////////////////////////////////////////////////////////////////////////////
   // WINDOWS
   /////////////////////////////////////////////////////////////////////////////
@@ -50,9 +54,13 @@
     var root = Window.prototype.init.apply(this, arguments);
     var self = this;
 
+	
     // Load and set up scheme (GUI) here
     scheme.render(this, 'MapWindow', root);
-
+	
+	this._find('Grid').son('click', this, this.createGrid(27,45, scheme));
+	this._find('Mbone').son('click', this, this.loadLocations);	
+	
     return root;
   };
 
@@ -78,22 +86,81 @@
   ApplicationMap.prototype.init = function(settings, metadata) {
     Application.prototype.init.apply(this, arguments);
 
-    var self = this;
-    var url = API.getApplicationResource(this, './scheme.html');
-    var scheme = GUI.createScheme(url);
+	// Globalized
+    self = this;
+    url = API.getApplicationResource(this, './scheme.html');
+    scheme = GUI.createScheme(url);
     scheme.load(function(error, result) {
       self._addWindow(new ApplicationMapWindow(self, metadata, scheme));
     });
-
     this._setScheme(scheme);
   };
+  
+	console.log("Yo!");
 
+	ApplicationMapWindow.prototype.createGrid = function(rows, columns, scheme)
+	{	
+		var letter = 65;
+		
+		for(var i = 0; i < rows; i++, letter++)
+		{
+			scheme.create(self, 'gui-vbox-container', {'id': 'vboxCont' + i, 'grow': '1'}, scheme.find(this, 'Grid'));
+			scheme.create(self, 'gui-hbox', {'id': 'hbox' + i}, scheme.find(this, 'vboxCont' + i));
+			for(var j = 0; j < columns; j++)
+			{
+				scheme.create(self, 'gui-hbox-container', {'id': 'hboxCont' + i + '-' + j}, scheme.find(this, 'hbox' + i));
+				//scheme.create(self, 'gui-button', {'id': String.fromCharCode(letter) + j }, scheme.find(this, 'hboxCont' + j + '-' + i));
+			}
+		}
+	}
+	
+	ApplicationMapWindow.prototype.loadLocations = function()
+	{
+		//Save this random coordinate function for the mission giving function. For now, it stays here.
+		var randCoorX = Math.floor((Math.random() * 27));
+		var randCoorY = Math.floor((Math.random() * 45));
+		var letter = 65 + randCoorX;
+		
+		var existingChildren = scheme.find(this, 'hboxCont' + randCoorX + '-' + randCoorY);
+		if(existingChildren.$element.children.length < 1)
+		{
+			scheme.create(self, 'gui-button', {'id': String.fromCharCode(letter) + randCoorY }, scheme.find(this, 'hboxCont' + randCoorX + '-' + randCoorY));
+			console.log("Button was created on: " + randCoorX + '-' + randCoorY);
+		}
+		else
+		{
+			console.log("There was already a button on: " + randCoorX + '-' + randCoorY);
+		}
+	}
+	
+	ApplicationMapWindow.prototype.onMyButtonClick = function(el, ev) 
+	{
+		console.log('CLICKED');
+		API.createDialog('Alert',{
+			message: 'Foo'
+			}, function(){
+				console.log('closed');
+		});
+			
+		API.error('Error','Fuck the police','23');	
+	};
+	
+	
   /////////////////////////////////////////////////////////////////////////////
   // EXPORTS
   /////////////////////////////////////////////////////////////////////////////
+
 
   OSjs.Applications = OSjs.Applications || {};
   OSjs.Applications.ApplicationMap = OSjs.Applications.ApplicationMap || {};
   OSjs.Applications.ApplicationMap.Class = ApplicationMap;
 
 })(OSjs.Core.Application, OSjs.Core.Window, OSjs.Utils, OSjs.API, OSjs.VFS, OSjs.GUI);
+
+
+
+
+  
+
+
+
