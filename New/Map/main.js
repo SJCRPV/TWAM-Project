@@ -131,6 +131,9 @@
 		{
 			console.log("There was already a button on: " + randCoorX + '-' + randCoorY);
 		}
+		
+		
+		
 	}
 	
 	ApplicationMapWindow.prototype.onMyButtonClick = function(el, ev) 
