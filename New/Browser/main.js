@@ -29,7 +29,11 @@
  */
 (function(Application, Window, Utils, API, VFS, GUI) {
   'use strict';
-
+  
+	var self;
+	var url;
+	var scheme;
+	
   /////////////////////////////////////////////////////////////////////////////
   // WINDOWS
   /////////////////////////////////////////////////////////////////////////////
@@ -52,6 +56,8 @@
 
     // Load and set up scheme (GUI) here
     scheme.render(this, 'BrowserWindow', root);
+	
+	this._find('Mission').son('click', this, this.openMissionPage, scheme);	
 
     return root;
   };
@@ -87,6 +93,13 @@
 
     this._setScheme(scheme);
   };
+  
+  ApplicationBrowserWindow.prototype.openMissionPage = function(scheme)  
+  {
+  	  this._find('url').set('value', "https://www.twam.com/getamission");
+	  this._find('page').set('src', 'FS/get/home:///.packages/Browser/missionPage.html');
+	  //Find a way to render the OSJS notation into the iframe.
+  }
 
   /////////////////////////////////////////////////////////////////////////////
   // EXPORTS
