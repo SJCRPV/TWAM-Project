@@ -28,8 +28,8 @@
  * @licence Simplified BSD License
  */
 
-.ApplicationMapWindow application-window-content {
-}
+/* .ApplicationMapWindow application-window-content {
+} */
 
 .ApplicationMapWindow gui-vbox[data-id="Grid"] * 
 {

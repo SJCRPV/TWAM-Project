@@ -1,4 +1,4 @@
-<application-window data-id="MissionWindow">
+<!-- <application-window data-id="MissionWindow">
     <gui-vbox>
 		<gui-vbox-container data-id="page">
 				Welcome!
@@ -6,4 +6,51 @@
 			<gui-button data-id="missionGen">Generate</gui-button>
 		</gui-vbox-container>
     </gui-vbox>
-</application-window>
+</application-window> -->
+
+<!doctype html>
+<html>
+	<head>
+	</head>
+	
+	<body>
+		<center id="message">
+			<div>
+				<p>Welcome!
+				Press the button below to generate a mission.</p>
+				<button id="MissionGen" type="button" onclick="generateMission()">Generate</button>
+			</div>
+		</center>
+	</body>
+	
+	<script>
+		function generateMission()
+		{
+			var missionStatement = 'Your objective is to ';
+			if(Math.floor((Math.random() * 2)) == 0)
+			{
+				missionStatement += 'delete the files of the server in this IP: ';
+			}
+			else
+			{
+				missionStatement += 'copy the files of the server in this IP: ';
+			}
+			
+			var num = '' + Math.floor((Math.random() * 255));
+			for(var i = 0; i < 3; i++)
+			{
+				num += '.' + Math.floor((Math.random() * 255));
+			}
+			
+			missionStatement += num + ".\nGood luck.";
+			console.log(missionStatement);
+			var missionStatNode = document.createTextNode(missionStatement);
+			
+			var el = document.createElement("div");
+			el.setAttribute("id", "missionState");
+			el.appendChild(missionStatNode);
+			var olDiv = document.getElementById("message");
+			document.body.insertBefore(el, olDiv);
+		}
+	</script>
+</html>

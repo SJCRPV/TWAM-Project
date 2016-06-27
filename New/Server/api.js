@@ -28,26 +28,10 @@
  * @licence Simplified BSD License
  */
 (function() {
+  'use strict';
 
-  module.exports = 
-  {
-	//Template method
-	MyServerMethod: function(args, callback, request, response)
-	{
-      callback(false, { // First parameter: Error message (if any)
-        foo: "666",      // Second parameter: Result (data)
-		inter: "net"
-      });
-    }
-	
-	fetchInformation: function(args, callback, request, response)
-	{
-      callback(false, { // First parameter: Error message (if any)
-		console.log("hai");
-        xhttp.open("POST", "fetchingInformation.php", true);
-		xhttp.send();
-      });
-    }
+  // See http://os.js.org/doc/tutorials/application-with-server-api.html
+  module.exports = {
   };
 
 })();

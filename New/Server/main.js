@@ -29,17 +29,13 @@
  */
 (function(Application, Window, Utils, API, VFS, GUI) {
   'use strict';
-  
-	var self;
-	var url;
-	var scheme;
-	
+
   /////////////////////////////////////////////////////////////////////////////
   // WINDOWS
   /////////////////////////////////////////////////////////////////////////////
 
-  function ApplicationBrowserWindow(app, metadata, scheme) {
-    Window.apply(this, ['ApplicationBrowserWindow', {
+  function ApplicationServerAttackWindow(app, metadata, scheme) {
+    Window.apply(this, ['ApplicationServerAttackWindow', {
       icon: metadata.icon,
       title: metadata.name,
       width: 400,
@@ -47,23 +43,24 @@
     }, app, scheme]);
   }
 
-  ApplicationBrowserWindow.prototype = Object.create(Window.prototype);
-  ApplicationBrowserWindow.constructor = Window.prototype;
+  ApplicationServerAttackWindow.prototype = Object.create(Window.prototype);
+  ApplicationServerAttackWindow.constructor = Window.prototype;
 
-  ApplicationBrowserWindow.prototype.init = function(wmRef, app, scheme) {
+  ApplicationServerAttackWindow.prototype.init = function(wmRef, app, scheme) {
     var root = Window.prototype.init.apply(this, arguments);
     var self = this;
 
     // Load and set up scheme (GUI) here
-    scheme.render(this, 'BrowserWindow', root);
+    scheme.render(this, 'ServerAttackWindow', root);
 	
-	this._find('Home').son('click', this, this.openHomePage);
-	this._find('Mission').son('click', this, this.openMissionPage);	
+	// These are the buttons that allow you to copy or delete the selected items
+	this._find('copySel').son('click', this, this.copySelected);
+	this._find('delSel').son('click', this, this.deleteSelected);
 
     return root;
   };
 
-  ApplicationBrowserWindow.prototype.destroy = function() {
+  ApplicationServerAttackWindow.prototype.destroy = function() {
     Window.prototype.destroy.apply(this, arguments);
   };
 
@@ -71,49 +68,54 @@
   // APPLICATION
   /////////////////////////////////////////////////////////////////////////////
 
-  function ApplicationBrowser(args, metadata) {
-    Application.apply(this, ['ApplicationBrowser', args, metadata]);
+  function ApplicationServerAttack(args, metadata) {
+    Application.apply(this, ['ApplicationServerAttack', args, metadata]);
   }
 
-  ApplicationBrowser.prototype = Object.create(Application.prototype);
-  ApplicationBrowser.constructor = Application;
+  ApplicationServerAttack.prototype = Object.create(Application.prototype);
+  ApplicationServerAttack.constructor = Application;
 
-  ApplicationBrowser.prototype.destroy = function() {
+  ApplicationServerAttack.prototype.destroy = function() {
     return Application.prototype.destroy.apply(this, arguments);
   };
 
-  ApplicationBrowser.prototype.init = function(settings, metadata) {
+  ApplicationServerAttack.prototype.init = function(settings, metadata) {
     Application.prototype.init.apply(this, arguments);
 
     var self = this;
-    var url = API.getApplicationResource(this, './scheme.html');
-    var scheme = GUI.createScheme(url);
-    scheme.load(function(error, result) {
-      self._addWindow(new ApplicationBrowserWindow(self, metadata, scheme));
+    this._loadScheme('./scheme.html', function(scheme) {
+      self._addWindow(new ApplicationServerAttackWindow(self, metadata, scheme));
     });
-
-    this._setScheme(scheme);
   };
-  
-  ApplicationBrowserWindow.prototype.openHomePage = function()
-  {
-	  this._find('url').set('value', "https://www.twam.com/");
-	  this._find('page').set('src', 'FS/get/home:///.packages/Browser/home.html');
-  }
-  
-  ApplicationBrowserWindow.prototype.openMissionPage = function()  
-  {
-  	  this._find('url').set('value', "https://www.twam.com/getamission");
-	  this._find('page').set('src', 'FS/get/home:///.packages/Browser/missionPage.html');
-	  //Find a way to render the OSJS notation into the iframe.
-  }
 
+  //This should allow you to click a button to copy the selected items
+ ApplicationServerAttack.prototype.copySelected = function()
+{
+	
+	VFS.copy(src, dest, function(err, res) 
+	{
+	  if ( err || !res ) 
+	  {
+		alert(err || 'Failed to copy file');
+		return;
+	  }
+
+	  // Success!
+	}, {/* options */});
+}
+
+  //This should allow you to click a button to delete the selected items
+//  ApplicationServerAttack.prototype.deleteSelected = function()
+// {
+		
+// }
+  
   /////////////////////////////////////////////////////////////////////////////
   // EXPORTS
   /////////////////////////////////////////////////////////////////////////////
 
   OSjs.Applications = OSjs.Applications || {};
-  OSjs.Applications.ApplicationBrowser = OSjs.Applications.ApplicationBrowser || {};
-  OSjs.Applications.ApplicationBrowser.Class = ApplicationBrowser;
+  OSjs.Applications.ApplicationServerAttack = OSjs.Applications.ApplicationServerAttack || {};
+  OSjs.Applications.ApplicationServerAttack.Class = Object.seal(ApplicationServerAttack);
 
 })(OSjs.Core.Application, OSjs.Core.Window, OSjs.Utils, OSjs.API, OSjs.VFS, OSjs.GUI);

@@ -104,12 +104,12 @@
 		
 		for(var i = 0; i < rows; i++, letter++)
 		{
-			scheme.create(self, 'gui-vbox-container', {'id': 'vboxCont' + i, 'grow': '1'}, scheme.find(this, 'Grid'));
+			scheme.create(self, 'gui-vbox-container', {'id': 'vboxCont' + i, 'grow': '0'}, scheme.find(this, 'Grid'));
 			scheme.create(self, 'gui-hbox', {'id': 'hbox' + i}, scheme.find(this, 'vboxCont' + i));
 			for(var j = 0; j < columns; j++)
 			{
-				scheme.create(self, 'gui-hbox-container', {'id': 'hboxCont' + i + '-' + j}, scheme.find(this, 'hbox' + i));
-				//scheme.create(self, 'gui-button', {'id': String.fromCharCode(letter) + j }, scheme.find(this, 'hboxCont' + j + '-' + i));
+				scheme.create(self, 'gui-hbox-container', {'id': 'hboxCont' + i + '-' + j, 'grow': '0'}, scheme.find(this, 'hbox' + i));
+				//scheme.create(self, 'gui-button', {'id': String.fromCharCode(letter) + j }, scheme.find(this, 'hboxCont' + i + '-' + j));
 			}
 		}
 	}
@@ -122,7 +122,7 @@
 		var letter = 65 + randCoorX;
 		
 		var existingChildren = scheme.find(this, 'hboxCont' + randCoorX + '-' + randCoorY);
-		if(existingChildren.$element.children.length < 1)
+		if(existingChildren.$element.children.length < 2)
 		{
 			scheme.create(self, 'gui-button', {'id': String.fromCharCode(letter) + randCoorY }, scheme.find(this, 'hboxCont' + randCoorX + '-' + randCoorY));
 			console.log("Button was created on: " + randCoorX + '-' + randCoorY);
