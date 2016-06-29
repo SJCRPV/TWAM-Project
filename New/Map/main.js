@@ -74,7 +74,7 @@
 			}
 			resultArray = result;
 			
-			//console.log("Antes do while " + resultArray + "\nE a variavel tem o tamanho de: " + resultArray.length);
+			console.log("Antes do while " + resultArray + "\nE a variavel tem o tamanho de: " + resultArray.length);
 			var arrayPos = 0;
 			while(arrayPos < resultArray.length)
 			{
@@ -83,13 +83,37 @@
 				var coorY = temp[1];
 				var asciiCode = 65 + coorX;
 				
+				var coordArray = [];
+				coordArray.push(temp[0] + " " + temp[1]);
+				
 				var existingChildren = scheme.find(self, 'hboxCont' + coorX + '-' + coorY);
 				//console.log(scheme.find(self, 'hboxCont' + coorX + '-' + coorY));
 				if(existingChildren.$element.children.length < 1)
 				{
 					scheme.create(self, 'gui-button', {'id': String.fromCharCode(asciiCode) + coorY}, scheme.find(self, 'hboxCont' + coorX + '-' + coorY)).on('click', function()
 						{
-							OSjs.API.launch('ApplicationServerAttack');
+							methodName = 'getDescription';
+							methodArgs =  coorX + ' ' + coorY;
+							var resultArray = '';
+							console.log(methodArgs);
+							app._api(methodName, methodArgs, function(error, result)
+							{
+								if(error)
+								{
+									alert('An error ocurred' + error);
+									return;
+								}
+								console.log(result);
+								resultArray = result;
+								console.log(resultArray);
+								
+								var descLabel = "Server Name: " + result + "\nCoordinates: " + coorX + " " + coorY;  
+								scheme.create(self, 'gui-label', {'id': 'serverDesc', 'label': descLabel}, scheme.find(self, 'funcs2'));
+								scheme.create(self, 'gui-button', {'id': 'connectButton', 'label': 'Connect'}, scheme.find(self, 'funcs3')).on('click', function()
+									{
+										OSjs.API.launch('ApplicationServerAttack');
+									})
+							});
 						});
 					console.log("Button was created on: " + coorX + '-' + coorY);
 				}
@@ -101,9 +125,8 @@
 			}
 		});
 	});
-	
-    return root;
-  };
+	return root;
+  }
 
   ApplicationMapWindow.prototype.destroy = function() {
     Window.prototype.destroy.apply(this, arguments);
