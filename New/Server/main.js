@@ -53,6 +53,8 @@
     // Load and set up scheme (GUI) here
     scheme.render(this, 'ServerAttackWindow', root);
 	
+	
+	
 	// These are the buttons that allow you to copy or delete the selected items
 	this._find('copySel').son('click', this, this.copySelected);
 	this._find('delSel').son('click', this, this.deleteSelected);

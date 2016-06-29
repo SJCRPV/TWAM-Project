@@ -55,7 +55,7 @@
 	
 	// Bind button to call server API
   this._find('Button').on('click', function() { // Expects you to have a button with data-id="Button"
-    var methodName = 'MyServerMethod';
+    var methodName = 'test';
     var methodArgs = {'Argument': 'Some Value'};
 
     app._api(methodName, methodArgs, function(error, result) { // or `this._app`

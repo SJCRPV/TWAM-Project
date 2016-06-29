@@ -2,13 +2,15 @@
 class ApplicationIPTracer // As you defined in metadata.json
 {
   public static function call($method, $args) {
-    if ( $method === 'MyServerMethod' ) {
+    if ( $method === 'test' ) {
       return "test";
     } else {
       throw new Exception("This is how you send an error");
     }
     return false;
   }
+
+}
   
   public static function MyServerMethod($method, $args)
   {

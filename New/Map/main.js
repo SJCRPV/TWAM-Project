@@ -59,7 +59,48 @@
     scheme.render(this, 'MapWindow', root);
 	
 	this._find('Grid').son('click', this, this.createGrid(27,45, scheme));
-	this._find('Mbone').son('click', this, this.loadLocations);	
+	this._find('locations').on('click', function()
+	{
+		var methodName = 'getLocations';
+		var methodArgs = '';
+		var resultArray = '';
+		
+		app._api(methodName, methodArgs, function(error, result)
+		{
+			if(error)
+			{
+				alert('An error ocurred' + error);
+				return;
+			}
+			resultArray = result;
+			
+			//console.log("Antes do while " + resultArray + "\nE a variavel tem o tamanho de: " + resultArray.length);
+			var arrayPos = 0;
+			while(arrayPos < resultArray.length)
+			{
+				var temp = resultArray[arrayPos].split(' ');
+				var coorX = temp[0];
+				var coorY = temp[1];
+				var asciiCode = 65 + coorX;
+				
+				var existingChildren = scheme.find(self, 'hboxCont' + coorX + '-' + coorY);
+				//console.log(scheme.find(self, 'hboxCont' + coorX + '-' + coorY));
+				if(existingChildren.$element.children.length < 1)
+				{
+					scheme.create(self, 'gui-button', {'id': String.fromCharCode(asciiCode) + coorY}, scheme.find(self, 'hboxCont' + coorX + '-' + coorY)).on('click', function()
+						{
+							OSjs.API.launch('ApplicationServerAttack');
+						});
+					console.log("Button was created on: " + coorX + '-' + coorY);
+				}
+				else
+				{
+					console.error("There was already a button on: " + coorX + '-' + coorY);
+				}
+				arrayPos++;
+			}
+		});
+	});
 	
     return root;
   };
@@ -109,27 +150,7 @@
 			for(var j = 0; j < columns; j++)
 			{
 				scheme.create(self, 'gui-hbox-container', {'id': 'hboxCont' + i + '-' + j, 'grow': '0'}, scheme.find(this, 'hbox' + i));
-				//scheme.create(self, 'gui-button', {'id': String.fromCharCode(letter) + j }, scheme.find(this, 'hboxCont' + i + '-' + j));
 			}
-		}
-	}
-	
-	ApplicationMapWindow.prototype.loadLocations = function()
-	{
-		//Save this random coordinate function for the mission giving function. For now, it stays here.
-		var randCoorX = Math.floor((Math.random() * 27));
-		var randCoorY = Math.floor((Math.random() * 45));
-		var letter = 65 + randCoorX;
-		
-		var existingChildren = scheme.find(this, 'hboxCont' + randCoorX + '-' + randCoorY);
-		if(existingChildren.$element.children.length < 2)
-		{
-			scheme.create(self, 'gui-button', {'id': String.fromCharCode(letter) + randCoorY }, scheme.find(this, 'hboxCont' + randCoorX + '-' + randCoorY));
-			console.log("Button was created on: " + randCoorX + '-' + randCoorY);
-		}
-		else
-		{
-			console.log("There was already a button on: " + randCoorX + '-' + randCoorY);
 		}
 	}
 	
