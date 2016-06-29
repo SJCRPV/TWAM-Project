@@ -85,6 +85,8 @@ function openMenuPrograms()
 //Start Menu END
 
 //Programs
+
+
 function startNotepad()
 {
 	if(isNotepadOpen == false)
@@ -93,15 +95,36 @@ function startNotepad()
 		isNotepadOpen = true;
 		notepadWindow = new Window("Notepad", 300, 250, "mif-file-text");
 		var notepad = $("#notepad").html('<span class="title">Notes</span> ' +  notepadWindow.windowHtml());
-		
+		trayNotepad();
 	}
 	else
 	{
 		
 		notepadWindow.vis(Notepad);
+		trayNotepad();
 		console.log("Notepad is already open");
 	}
+	
+function trayNotepad()
+	{
+		
+		$("#openWindow1").html('<a class="openWindows" id="notepad" onclick="notepadWindow.vis()"> <span class="title">Notes</span>	</a> ');
+		document.getElementById("openWindow1").style.visibility="visible";
+	}
 }
+
+function invis()
+{
+	notepadWindow.invis();
+}
+
+	function untrayNotepad()
+	{
+		notepadWindow.invis(Notepad);
+		document.getElementById("openWindow1").style.visibility="hidden";
+	}
+	
+	
 
 function startMap()
 {
