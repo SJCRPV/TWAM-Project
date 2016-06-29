@@ -1,0 +1,118 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.keke.iptracer.IPtracerv1"
+    android:background="@drawable/ddos3"
+    android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+    <!-- Login progress -->
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstbar" />
+
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/StatusView"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffff" />
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+        android:paddingTop="40px">
+
+        <LinearLayout
+            android:id="@+id/email_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:id="@+id/IP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Insert IP"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:hyphenationFrequency="normal"
+                    android:textColor="#ffffff"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/IPTrace"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Trace IP"
+                android:textStyle="bold"
+                android:textColor="#ffffff" />
+
+            <Button
+                style="?android:textAppearanceSmall"
+                android:id="@+id/IpAlias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Provide IP Alias"
+                android:textStyle="bold"
+                android:textColor="#ffffff" />
+
+            <Button
+                style="?android:textAppearanceSmall"
+                android:id="@+id/getCoord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Get Coordinates"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:textColor="#ffffff" />
+
+            <Button
+                style="?android:textAppearanceSmall"
+                android:id="@+id/delIP"
+                android:layout_width="85dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="16dp"
+                android:text="ERASE IP"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:textColor="#ffffff"
+                android:background="#d74c4c"
+                android:backgroundTintMode="screen"
+                android:backgroundTint="#0c0c0c"
+                android:layout_gravity="center_horizontal"
+                android:theme="@android:style/Theme.Holo.Light" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
