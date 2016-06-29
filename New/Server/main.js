@@ -35,7 +35,7 @@
   /////////////////////////////////////////////////////////////////////////////
 
   function ApplicationServerAttackWindow(app, metadata, scheme) {
-    Window.apply(this, ['ApplicationServerAttackWindow', {
+    Window.apply(this, ['testWindow', {
       icon: metadata.icon,
       title: metadata.name,
       width: 400,
