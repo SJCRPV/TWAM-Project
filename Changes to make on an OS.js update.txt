@@ -1,6 +1,0 @@
-What to pay attention to when updating OS.js
-
-1 - /osjs/src/server/node/http.js
-
-change to -> server.listen(port, '0.0.0.0');
-
